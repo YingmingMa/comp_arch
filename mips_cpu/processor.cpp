@@ -49,7 +49,7 @@ void Processor::single_cycle_processor_advance() {
     // fetch
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
-    std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
+    // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
 
     // increment pc
     regfile.pc += 4;
@@ -137,45 +137,46 @@ std::cout << "=============================\n" << std::dec;
     regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc;
 }
 
-// struct IF_ID_reg {
-//     uint32_t instruction;
-// };
+struct IF_ID_reg {
+    uint32_t instruction;
+};
 
-// struct ID_EX_reg {
-//     // Data read from registers
-//     uint32_t read_data_1;
-//     uint32_t read_data_2;
+struct ID_EX_reg {
+    // Data read from registers
+    uint32_t read_data_1;
+    uint32_t read_data_2;
     
-//     // Instruction fields decoded in ID
-//     int opcode;
-//     int rs;
-//     int rt;
-//     int rd;
-//     int shamt;
-//     int funct;
-//     uint32_t imm;
-    
-//     // Control signals
-//     bool ALU_src;
-//     bool reg_dest;
-//     unsigned ALU_op : 2;
-//     bool shift;
-//     bool mem_read;
-//     bool mem_write;
-//     bool halfword;
-//     bool byte;
-//     bool reg_write;
-//     bool mem_to_reg;
+    // Instruction fields decoded in ID
+    int opcode;
+    int rs;
+    int rt;
+    int rd;
+    int shamt;
+    int funct;
+    uint32_t imm;
+    int addr;
 
-//     // Branch/Jump control
-//     bool branch;
-//     bool bne;
-//     bool jump;
-//     bool jump_reg;
-//     bool link;
-//     uint32_t branch_target;
-//     uint32_t jump_target;
-// };
+    // Control signals
+    bool ALU_src;           // 0 if second operand is from reg_file, 1 if imm
+    bool reg_dest;          // 0 if rt, 1 if rd
+    unsigned ALU_op : 2;    // 10 for R-type, 00 for LW/SW, 01 for BEQ/BNE, 11 for others
+    bool shift;             // 1 if sll or srl
+    bool mem_read;          // 1 if memory needs to be read
+    bool mem_write;         // 1 if needs to be written to memory
+    bool halfword;          // 1 if loading/storing halfword from memory
+    bool byte;              // 1 if loading/storing a byte from memory
+    bool reg_write;         // 1 if need to write back to reg file
+    bool mem_to_reg;        // 1 if memory needs to written to reg
+
+    // Branch/Jump control
+    bool branch;            // 1 if branch
+    bool bne;               // 1 if bne   
+    bool jump;              // 1 if jummp
+    bool jump_reg;          // 1 if jr
+    bool link;              // 1 if jal
+    uint32_t branch_target;
+    uint32_t jump_target;
+};
 
 // struct EX_MEM_reg {
 //     uint32_t alu_result;
@@ -208,51 +209,44 @@ std::cout << "=============================\n" << std::dec;
 
 
 void Processor::pipelined_processor_advance() {
+    static IF_ID_reg if_id;
+    static ID_EX_reg id_ex;
+    // static EX_MEM_reg ex_mem;
+    // static MEM_WB_reg mem_wb;
+
     // fetch
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
-    std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
+    // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
 
     // increment pc
     regfile.pc += 4;
+
+    //todo: may need conditiond so that will will stall
+    if_id.instruction = instruction;
     
     // decode into contol signals
-    control.decode(instruction);
+    control.decode(if_id.instruction);
     DEBUG(control.print());
 
     // extract rs, rt, rd, imm, funct 
-    int opcode = (instruction >> 26) & 0x3f;
-    int rs = (instruction >> 21) & 0x1f;
-    int rt = (instruction >> 16) & 0x1f;
-    int rd = (instruction >> 11) & 0x1f;
-    int shamt = (instruction >> 6) & 0x1f;
-    int funct = instruction & 0x3f;
-    uint32_t imm = (instruction & 0xffff);
-    int addr = instruction & 0x3ffffff;
+    id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
+    id_ex.rs = (if_id.instruction >> 21) & 0x1f;
+    id_ex.rt = (if_id.instruction >> 16) & 0x1f;
+    id_ex.rd = (if_id.instruction >> 11) & 0x1f;
+    id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
+    id_ex.funct = if_id.instruction & 0x3f;
+    id_ex.imm = (if_id.instruction & 0xffff);
+    id_ex.addr = if_id.instruction & 0x3ffffff;
     // Variables to read data into
     uint32_t read_data_1 = 0;
     uint32_t read_data_2 = 0;
 
-    // Print instruction fields
-std::cout << "\n===== Instruction Fields =====\n";
-std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
-std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
-std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
-std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
-std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
-std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
-std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
-std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
-std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
-std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
-std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
-std::cout << "=============================\n" << std::dec;
-    
     // Read from reg file
-    regfile.access(rs, rt, read_data_1, read_data_2, 0, 0, 0);
+    regfile.access(id_ex.rs, rt, read_data_1, read_data_2, 0, 0, 0);
     
     // Execution 
-    alu.generate_control_inputs(control.ALU_op, funct, opcode);
+    alu.generate_control_inputs(control.ALU_op, funct, id_ex.opcode);
    
     // Sign Extend Or Zero Extend the immediate
     // Using Arithmetic right shift in order to replicate 1 
