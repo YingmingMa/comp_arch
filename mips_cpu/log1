@@ -3,6 +3,7 @@
 
 ----- IF/ID Register -----
 instruction: 0x0
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -14,6 +15,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 0
@@ -36,6 +38,7 @@ Branch/Jump Control:
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -51,10 +54,11 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x0 Instruction: 0x20010005
+IF Stage - PC: 0x0 Instruction: 0x20010001
 
 CYCLE 0
 R[0]: 0
@@ -93,7 +97,8 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20010005
+instruction: 0x20010001
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -105,6 +110,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -127,6 +133,7 @@ Branch/Jump Control:
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -142,10 +149,11 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x4 Instruction: 0x2402000a
+IF Stage - PC: 0x4 Instruction: 0xac010000
 
 CYCLE 1
 R[0]: 0
@@ -184,7 +192,8 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x2402000a
+instruction: 0xac010000
+pc: 0x4
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -194,8 +203,9 @@ rs: 0
 rt: 1
 rd: 0
 shamt: 0
-funct: 5
-imm: 0x5
+funct: 1
+imm: 0x1
+pc: 0x0
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -218,6 +228,7 @@ Branch/Jump Control:
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -233,10 +244,11 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x8 Instruction: 0x30030002
+IF Stage - PC: 0x8 Instruction: 0x8c0a0000
 
 CYCLE 2
 R[0]: 0
@@ -275,26 +287,28 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x30030002
+instruction: 0x8c0a0000
+pc: 0x8
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 9
+opcode: 43
 rs: 0
-rt: 2
+rt: 1
 rd: 0
 shamt: 0
-funct: 10
-imm: 0xa
+funct: 0
+imm: 0x0
+pc: 0x4
 Control Signals:
   ALU_src: 1
   reg_dest: 0
-  ALU_op: 3
+  ALU_op: 0
   shift: 0
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch/Jump Control:
   branch: 0
@@ -306,9 +320,10 @@ Branch/Jump Control:
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0x5
+alu_result: 0x1
 write_data: 0x0
 write_reg: 1
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -324,10 +339,11 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
+pc: 0x0
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0xc Instruction: 0xac000000
+IF Stage - PC: 0xc Instruction: 0x0
 
 CYCLE 3
 R[0]: 0
@@ -366,27 +382,29 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0xac000000
+instruction: 0x0
+pc: 0xc
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 12
+opcode: 35
 rs: 0
-rt: 3
+rt: 10
 rd: 0
 shamt: 0
-funct: 2
-imm: 0x2
+funct: 0
+imm: 0x0
+pc: 0x8
 Control Signals:
   ALU_src: 1
   reg_dest: 0
-  ALU_op: 3
+  ALU_op: 0
   shift: 0
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
   reg_write: 1
-  mem_to_reg: 0
+  mem_to_reg: 1
 Branch/Jump Control:
   branch: 0
   bne: 0
@@ -397,13 +415,14 @@ Branch/Jump Control:
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0xa
-write_data: 0x0
-write_reg: 2
+alu_result: 0x0
+write_data: 0x1
+write_reg: 1
+pc: 0x4
 Control Signals:
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
@@ -413,16 +432,17 @@ Branch Results:
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x5
+alu_result: 0x1
 write_reg: 1
+pc: 0x0
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0x10 Instruction: 0xac000000
+IF Stage - PC: 0x10 Instruction: 0xac0a0004
 
 CYCLE 4
 R[0]: 0
-R[1]: 5
+R[1]: 1
 R[2]: 0
 R[3]: 0
 R[4]: 0
@@ -457,26 +477,28 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0xac000000
+instruction: 0xac0a0004
+pc: 0x10
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 43
+opcode: 0
 rs: 0
 rt: 0
 rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
+pc: 0xc
 Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 0
-  shift: 0
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
   mem_read: 0
-  mem_write: 1
-  reg_write: 0
+  mem_write: 0
+  reg_write: 1
   mem_to_reg: 0
 Branch/Jump Control:
   branch: 0
@@ -490,12 +512,13 @@ Branch/Jump Control:
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
-write_reg: 3
+write_reg: 10
+pc: 0x8
 Control Signals:
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
   reg_write: 1
-  mem_to_reg: 0
+  mem_to_reg: 1
 Branch Results:
   branch_taken: 0
   branch_target: 0x0
@@ -504,17 +527,18 @@ Branch Results:
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0xa
-write_reg: 2
+alu_result: 0x0
+write_reg: 1
+pc: 0x4
 Control Signals:
-  reg_write: 1
+  reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x14 Instruction: 0xac000000
+IF Stage - PC: 0x14 Instruction: 0x8c020004
 
 CYCLE 5
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -548,18 +572,20 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0xac000000
+instruction: 0x8c020004
+pc: 0x14
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
 opcode: 43
 rs: 0
-rt: 0
+rt: 10
 rd: 0
 shamt: 0
-funct: 0
-imm: 0x0
+funct: 4
+imm: 0x4
+pc: 0x10
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -582,6 +608,102 @@ Branch/Jump Control:
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
+pc: 0xc
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x1
+alu_result: 0x0
+write_reg: 10
+pc: 0x8
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+IF Stage - PC: 0x18 Instruction: 0x210820
+
+CYCLE 6
+R[0]: 0
+R[1]: 1
+R[2]: 0
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x210820
+pc: 0x18
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 35
+rs: 0
+rt: 2
+rd: 0
+shamt: 0
+funct: 4
+imm: 0x4
+pc: 0x14
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x4
+write_data: 0x1
+write_reg: 10
+pc: 0x10
 Control Signals:
   mem_read: 0
   mem_write: 1
@@ -596,16 +718,17 @@ Branch Results:
 ----- MEM/WB Register -----
 read_data: 0x0
 alu_result: 0x0
-write_reg: 3
+write_reg: 0
+pc: 0xc
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0x18 Instruction: 0x8c040000
+IF Stage - PC: 0x1c Instruction: 0xac020008
 
-CYCLE 6
+CYCLE 7
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -613,7 +736,387 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0xac020008
+pc: 0x1c
+
+----- ID/EX Register -----
+read_data_1: 0x1
+read_data_2: 0x1
+opcode: 0
+rs: 1
+rt: 1
+rd: 1
+shamt: 0
+funct: 32
+imm: 0x820
+pc: 0x18
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x4
+write_data: 0x0
+write_reg: 2
+pc: 0x14
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x4
+write_reg: 10
+pc: 0x10
+Control Signals:
+  reg_write: 0
+  mem_to_reg: 0
+IF Stage - PC: 0x20 Instruction: 0x8c030008
+
+CYCLE 8
+R[0]: 0
+R[1]: 1
+R[2]: 0
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x8c030008
+pc: 0x20
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 43
+rs: 0
+rt: 2
+rd: 0
+shamt: 0
+funct: 8
+imm: 0x8
+pc: 0x1c
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 0
+  mem_write: 1
+  reg_write: 0
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x2
+write_data: 0x1
+write_reg: 1
+pc: 0x18
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x1
+alu_result: 0x4
+write_reg: 2
+pc: 0x14
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+IF Stage - PC: 0x24 Instruction: 0x210820
+
+CYCLE 9
+R[0]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x210820
+pc: 0x24
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 35
+rs: 0
+rt: 3
+rd: 0
+shamt: 0
+funct: 8
+imm: 0x8
+pc: 0x20
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x8
+write_data: 0x1
+write_reg: 2
+pc: 0x1c
+Control Signals:
+  mem_read: 0
+  mem_write: 1
+  reg_write: 0
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x2
+write_reg: 1
+pc: 0x18
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+IF Stage - PC: 0x28 Instruction: 0xac010000
+
+CYCLE 10
+R[0]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0xac010000
+pc: 0x28
+
+----- ID/EX Register -----
+read_data_1: 0x2
+read_data_2: 0x2
+opcode: 0
+rs: 1
+rt: 1
+rd: 1
+shamt: 0
+funct: 32
+imm: 0x820
+pc: 0x24
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x8
+write_data: 0x0
+write_reg: 3
+pc: 0x20
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x8
+write_reg: 2
+pc: 0x1c
+Control Signals:
+  reg_write: 0
+  mem_to_reg: 0
+IF Stage - PC: 0x2c Instruction: 0x8c040000
+
+CYCLE 11
+R[0]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -640,17 +1143,19 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x8c040000
+pc: 0x2c
 
 ----- ID/EX Register -----
 read_data_1: 0x0
-read_data_2: 0x0
+read_data_2: 0x2
 opcode: 43
 rs: 0
-rt: 0
+rt: 1
 rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
+pc: 0x28
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -670,13 +1175,14 @@ Branch/Jump Control:
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 0
+alu_result: 0x4
+write_data: 0x2
+write_reg: 1
+pc: 0x24
 Control Signals:
   mem_read: 0
-  mem_write: 1
-  reg_write: 0
+  mem_write: 0
+  reg_write: 1
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
@@ -685,26 +1191,27 @@ Branch Results:
   jump_target: 0x0
 
 ----- MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 0
+read_data: 0x1
+alu_result: 0x8
+write_reg: 3
+pc: 0x20
 Control Signals:
-  reg_write: 0
-  mem_to_reg: 0
-IF Stage - PC: 0x1c Instruction: 0x8c050000
+  reg_write: 1
+  mem_to_reg: 1
+IF Stage - PC: 0x30 Instruction: 0x210820
 
-CYCLE 7
+CYCLE 12
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 1
 R[4]: 0
 R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -730,7 +1237,8 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x8c050000
+instruction: 0x210820
+pc: 0x30
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -742,6 +1250,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
+pc: 0x2c
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -762,8 +1271,9 @@ Branch/Jump Control:
 
 ----- EX/MEM Register -----
 alu_result: 0x0
-write_data: 0x0
-write_reg: 0
+write_data: 0x4
+write_reg: 1
+pc: 0x28
 Control Signals:
   mem_read: 0
   mem_write: 1
@@ -777,25 +1287,26 @@ Branch Results:
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
+alu_result: 0x4
+write_reg: 1
+pc: 0x24
 Control Signals:
-  reg_write: 0
+  reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0x20 Instruction: 0x8c060000
+IF Stage - PC: 0x34 Instruction: 0x421020
 
-CYCLE 8
+CYCLE 13
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
 R[4]: 0
 R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -821,7 +1332,293 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x8c060000
+instruction: 0x421020
+pc: 0x34
+
+----- ID/EX Register -----
+read_data_1: 0x4
+read_data_2: 0x4
+opcode: 0
+rs: 1
+rt: 1
+rd: 1
+shamt: 0
+funct: 32
+imm: 0x820
+pc: 0x30
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 4
+pc: 0x2c
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 1
+pc: 0x28
+Control Signals:
+  reg_write: 0
+  mem_to_reg: 0
+IF Stage - PC: 0x38 Instruction: 0xac010004
+
+CYCLE 14
+R[0]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0xac010004
+pc: 0x38
+
+----- ID/EX Register -----
+read_data_1: 0x1
+read_data_2: 0x1
+opcode: 0
+rs: 2
+rt: 2
+rd: 2
+shamt: 0
+funct: 32
+imm: 0x1020
+pc: 0x34
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x8
+write_data: 0x4
+write_reg: 1
+pc: 0x30
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x4
+alu_result: 0x0
+write_reg: 4
+pc: 0x2c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+IF Stage - PC: 0x3c Instruction: 0x8c050004
+
+CYCLE 15
+R[0]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
+R[4]: 4
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x8c050004
+pc: 0x3c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x4
+opcode: 43
+rs: 0
+rt: 1
+rd: 0
+shamt: 0
+funct: 4
+imm: 0x4
+pc: 0x38
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 0
+  mem_write: 1
+  reg_write: 0
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x2
+write_data: 0x1
+write_reg: 2
+pc: 0x34
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x8
+write_reg: 1
+pc: 0x30
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+IF Stage - PC: 0x40 Instruction: 0x0
+
+CYCLE 16
+R[0]: 0
+R[1]: 8
+R[2]: 1
+R[3]: 1
+R[4]: 4
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x40
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -831,8 +1628,9 @@ rs: 0
 rt: 5
 rd: 0
 shamt: 0
-funct: 0
-imm: 0x0
+funct: 4
+imm: 0x4
+pc: 0x3c
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -852,560 +1650,15 @@ Branch/Jump Control:
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 4
+alu_result: 0x4
+write_data: 0x8
+write_reg: 1
+pc: 0x38
 Control Signals:
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-Control Signals:
+  mem_read: 0
+  mem_write: 1
   reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x24 Instruction: 0x8c070000
-
-CYCLE 9
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x8c070000
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 35
-rs: 0
-rt: 6
-rd: 0
-shamt: 0
-funct: 0
-imm: 0x0
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 0
-  shift: 0
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 5
-Control Signals:
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 4
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 1
-IF Stage - PC: 0x28 Instruction: 0x3c080023
-
-CYCLE 10
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x3c080023
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 35
-rs: 0
-rt: 7
-rd: 0
-shamt: 0
-funct: 0
-imm: 0x0
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 0
-  shift: 0
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 6
-Control Signals:
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 5
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 1
-IF Stage - PC: 0x2c Instruction: 0x34090002
-
-CYCLE 11
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x34090002
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 15
-rs: 0
-rt: 8
-rd: 0
-shamt: 0
-funct: 35
-imm: 0x23
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 3
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 7
-Control Signals:
-  mem_read: 1
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 1
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 6
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 1
-IF Stage - PC: 0x30 Instruction: 0x280a0001
-
-CYCLE 12
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x280a0001
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 13
-rs: 0
-rt: 9
-rd: 0
-shamt: 0
-funct: 2
-imm: 0x2
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 3
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x230000
-write_data: 0x0
-write_reg: 8
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 7
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 1
-IF Stage - PC: 0x34 Instruction: 0x2c0b0001
-
-CYCLE 13
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x2c0b0001
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 10
-rs: 0
-rt: 10
-rd: 0
-shamt: 0
-funct: 1
-imm: 0x1
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 3
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x2
-write_data: 0x0
-write_reg: 9
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x230000
-write_reg: 8
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x38 Instruction: 0x226020
-
-CYCLE 14
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x226020
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 11
-rs: 0
-rt: 11
-rd: 0
-shamt: 0
-funct: 1
-imm: 0x1
-Control Signals:
-  ALU_src: 1
-  reg_dest: 0
-  ALU_op: 3
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x1
-write_data: 0x0
-write_reg: 10
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
 Branch Results:
   branch_taken: 0
   branch_target: 0x0
@@ -1415,207 +1668,26 @@ Branch Results:
 ----- MEM/WB Register -----
 read_data: 0x0
 alu_result: 0x2
-write_reg: 9
+write_reg: 2
+pc: 0x34
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0x3c Instruction: 0x226821
-
-CYCLE 15
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x226821
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 12
-shamt: 0
-funct: 32
-imm: 0x6020
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x1
-write_data: 0x0
-write_reg: 11
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x1
-write_reg: 10
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x40 Instruction: 0x227024
-
-CYCLE 16
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x227024
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 13
-shamt: 0
-funct: 33
-imm: 0x6821
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0xf
-write_data: 0xa
-write_reg: 12
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x1
-write_reg: 11
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x44 Instruction: 0x227827
+IF Stage - PC: 0x44 Instruction: 0x0
 
 CYCLE 17
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
+R[11]: 0
 R[12]: 0
 R[13]: 0
 R[14]: 0
@@ -1640,23 +1712,25 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x227827
+instruction: 0x0
+pc: 0x44
 
 ----- ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
+read_data_1: 0x0
+read_data_2: 0x0
 opcode: 0
-rs: 1
-rt: 2
-rd: 14
+rs: 0
+rt: 0
+rd: 0
 shamt: 0
-funct: 36
-imm: 0x7024
+funct: 0
+imm: 0x0
+pc: 0x40
 Control Signals:
   ALU_src: 0
   reg_dest: 1
   ALU_op: 2
-  shift: 0
+  shift: 1
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -1671,14 +1745,15 @@ Branch/Jump Control:
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0xf
-write_data: 0xa
-write_reg: 13
+alu_result: 0x4
+write_data: 0x0
+write_reg: 5
+pc: 0x3c
 Control Signals:
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
   reg_write: 1
-  mem_to_reg: 0
+  mem_to_reg: 1
 Branch Results:
   branch_taken: 0
   branch_target: 0x0
@@ -1687,27 +1762,28 @@ Branch Results:
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0xf
-write_reg: 12
+alu_result: 0x4
+write_reg: 1
+pc: 0x38
 Control Signals:
-  reg_write: 1
+  reg_write: 0
   mem_to_reg: 0
-IF Stage - PC: 0x48 Instruction: 0x228025
+IF Stage - PC: 0x48 Instruction: 0x0
 
 CYCLE 18
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
-R[12]: 15
+R[11]: 0
+R[12]: 0
 R[13]: 0
 R[14]: 0
 R[15]: 0
@@ -1731,735 +1807,8 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x228025
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 15
-shamt: 0
-funct: 39
-imm: 0x7827
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x0
-write_data: 0xa
-write_reg: 14
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0xf
-write_reg: 13
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x4c Instruction: 0x22882a
-
-CYCLE 19
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x22882a
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 16
-shamt: 0
-funct: 37
-imm: 0xffff8025
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0xfffffff0
-write_data: 0xa
-write_reg: 15
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 14
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x50 Instruction: 0x41902b
-
-CYCLE 20
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x41902b
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 17
-shamt: 0
-funct: 42
-imm: 0xffff882a
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0xf
-write_data: 0xa
-write_reg: 16
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0xfffffff0
-write_reg: 15
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x54 Instruction: 0x19880
-
-CYCLE 21
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x19880
-
------ ID/EX Register -----
-read_data_1: 0xa
-read_data_2: 0x5
-opcode: 0
-rs: 2
-rt: 1
-rd: 18
-shamt: 0
-funct: 43
-imm: 0xffff902b
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x1
-write_data: 0xa
-write_reg: 17
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0xf
-write_reg: 16
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x58 Instruction: 0x2a042
-
-CYCLE 22
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x2a042
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x5
-opcode: 0
-rs: 0
-rt: 1
-rd: 19
-shamt: 2
-funct: 0
-imm: 0xffff9880
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x5
-write_reg: 18
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x1
-write_reg: 17
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x5c Instruction: 0x22a822
-
-CYCLE 23
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x22a822
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0xa
-opcode: 0
-rs: 0
-rt: 2
-rd: 20
-shamt: 1
-funct: 2
-imm: 0xffffa042
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x14
-write_data: 0x5
-write_reg: 19
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x0
-write_reg: 18
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x60 Instruction: 0x22b023
-
-CYCLE 24
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x22b023
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 21
-shamt: 0
-funct: 34
-imm: 0xffffa822
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x5
-write_data: 0xa
-write_reg: 20
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x14
-write_reg: 19
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x64 Instruction: 0x0
-
-CYCLE 25
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
 instruction: 0x0
-
------ ID/EX Register -----
-read_data_1: 0x5
-read_data_2: 0xa
-opcode: 0
-rs: 1
-rt: 2
-rd: 22
-shamt: 0
-funct: 35
-imm: 0xffffb023
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0xfffffffb
-write_data: 0xa
-write_reg: 21
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x5
-write_reg: 20
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x68 Instruction: 0x0
-
-CYCLE 26
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x0
+pc: 0x48
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -2471,97 +1820,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0xfffffffb
-write_data: 0xa
-write_reg: 22
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0xfffffffb
-write_reg: 21
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-IF Stage - PC: 0x6c Instruction: 0x0
-
-CYCLE 27
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x0
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 0
-rs: 0
-rt: 0
-rd: 0
-shamt: 0
-funct: 0
-imm: 0x0
+pc: 0x44
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -2584,6 +1843,102 @@ Branch/Jump Control:
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
+pc: 0x40
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x8
+alu_result: 0x4
+write_reg: 5
+pc: 0x3c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+IF Stage - PC: 0x4c Instruction: 0x0
+
+CYCLE 19
+R[0]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
+R[5]: 8
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x4c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x48
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x44
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -2597,37 +1952,38 @@ Branch Results:
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0xfffffffb
-write_reg: 22
+alu_result: 0x0
+write_reg: 0
+pc: 0x40
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
-IF Stage - PC: 0x70 Instruction: 0x0
+IF Stage - PC: 0x50 Instruction: 0x0
 
-CYCLE 28
+CYCLE 20
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
+R[5]: 8
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
+R[11]: 0
+R[12]: 0
+R[13]: 0
 R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
+R[15]: 0
+R[16]: 0
+R[17]: 0
 R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
 R[23]: 0
 R[24]: 0
 R[25]: 0
@@ -2638,4 +1994,99 @@ R[29]: 0
 R[30]: 0
 R[31]: 0
 
-Completed execution in 14.5 nanoseconds.
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x50
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x4c
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x0
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x48
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x0
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x44
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+IF Stage - PC: 0x54 Instruction: 0x0
+
+CYCLE 21
+R[0]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
+R[5]: 8
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+Completed execution in 11 nanoseconds.

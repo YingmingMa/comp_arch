@@ -1,6 +1,6 @@
 
 PC: 0x0
-0 Instruction: 0x20010005
+0 Instruction: 0x20010001
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
@@ -12,25 +12,25 @@ ALU_SRC: 1
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x20010005
+instruction: 0x20010001
 opcode: 8 (0x8)
 rs: 0 (0x0)
 rt: 1 (0x1)
 rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 5 (0x5)
-immediate: 5 (0x5)
-jump address: 65541 (0x10005)
+funct: 1 (0x1)
+immediate: 1 (0x1)
+jump address: 65537 (0x10001)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 5
-EX: ALU result = 5
-EX: ALU op = 0 5
+EX: imm = 1
+EX: ALU result = 1
+EX: ALU op = 0 1
 
 CYCLE 0
 R[0]: 0
-R[1]: 5
+R[1]: 1
 R[2]: 0
 R[3]: 0
 R[4]: 0
@@ -63,38 +63,38 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x4
-4 Instruction: 0x2402000a
+4 Instruction: 0xac010000
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
 MEM_READ: 0
 MEM_TO_REG: 0
-ALU_OP: 3
-MEM_WRITE: 0
+ALU_OP: 0
+MEM_WRITE: 1
 ALU_SRC: 1
-REG_WRITE: 1
+REG_WRITE: 0
 
 ===== Instruction Fields =====
-instruction: 0x2402000a
-opcode: 9 (0x9)
+instruction: 0xac010000
+opcode: 43 (0x2b)
 rs: 0 (0x0)
-rt: 2 (0x2)
+rt: 1 (0x1)
 rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 10 (0xa)
-immediate: 10 (0xa)
-jump address: 131082 (0x2000a)
+funct: 0 (0x0)
+immediate: 0 (0x0)
+jump address: 65536 (0x10000)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = a
-EX: ALU result = a
-EX: ALU op = 0 a
+EX: imm = 0
+EX: ALU result = 0
+EX: ALU op = 0 0
 
 CYCLE 1
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -126,38 +126,38 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x8
-8 Instruction: 0x30030002
+8 Instruction: 0x8c0a0000
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 3
+MEM_READ: 1
+MEM_TO_REG: 1
+ALU_OP: 0
 MEM_WRITE: 0
 ALU_SRC: 1
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x30030002
-opcode: 12 (0xc)
+instruction: 0x8c0a0000
+opcode: 35 (0x23)
 rs: 0 (0x0)
-rt: 3 (0x3)
+rt: 10 (0xa)
 rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 2 (0x2)
-immediate: 2 (0x2)
-jump address: 196610 (0x30002)
+funct: 0 (0x0)
+immediate: 0 (0x0)
+jump address: 655360 (0xa0000)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 2
+EX: imm = 0
 EX: ALU result = 0
-EX: ALU op = 0 2
+EX: ALU op = 0 0
 
 CYCLE 2
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -165,7 +165,7 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -189,20 +189,20 @@ R[30]: 0
 R[31]: 0
 
 PC: 0xc
-c Instruction: 0xac000000
-REG_DEST: 0
+c Instruction: 0x0
+REG_DEST: 1
 JUMP: 0
 BRANCH: 0
 MEM_READ: 0
 MEM_TO_REG: 0
-ALU_OP: 0
-MEM_WRITE: 1
-ALU_SRC: 1
-REG_WRITE: 0
+ALU_OP: 2
+MEM_WRITE: 0
+ALU_SRC: 0
+REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0xac000000
-opcode: 43 (0x2b)
+instruction: 0x0
+opcode: 0 (0x0)
 rs: 0 (0x0)
 rt: 0 (0x0)
 rd: 0 (0x0)
@@ -219,8 +219,8 @@ EX: ALU op = 0 0
 
 CYCLE 3
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -228,7 +228,7 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -252,7 +252,7 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x10
-10 Instruction: 0xac000000
+10 Instruction: 0xac0a0004
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
@@ -264,26 +264,26 @@ ALU_SRC: 1
 REG_WRITE: 0
 
 ===== Instruction Fields =====
-instruction: 0xac000000
+instruction: 0xac0a0004
 opcode: 43 (0x2b)
 rs: 0 (0x0)
-rt: 0 (0x0)
+rt: 10 (0xa)
 rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
+funct: 4 (0x4)
+immediate: 4 (0x4)
+jump address: 655364 (0xa0004)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
+EX: imm = 4
+EX: ALU result = 4
+EX: ALU op = 0 4
 
 CYCLE 4
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 0
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -291,7 +291,7 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -315,38 +315,38 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x14
-14 Instruction: 0xac000000
+14 Instruction: 0x8c020004
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
+MEM_READ: 1
+MEM_TO_REG: 1
 ALU_OP: 0
-MEM_WRITE: 1
+MEM_WRITE: 0
 ALU_SRC: 1
-REG_WRITE: 0
+REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0xac000000
-opcode: 43 (0x2b)
+instruction: 0x8c020004
+opcode: 35 (0x23)
 rs: 0 (0x0)
-rt: 0 (0x0)
+rt: 2 (0x2)
 rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
+funct: 4 (0x4)
+immediate: 4 (0x4)
+jump address: 131076 (0x20004)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
+EX: imm = 4
+EX: ALU result = 4
+EX: ALU op = 0 4
 
 CYCLE 5
 R[0]: 0
-R[1]: 5
-R[2]: 10
+R[1]: 1
+R[2]: 1
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -354,7 +354,7 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -378,7 +378,322 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x18
-18 Instruction: 0x8c040000
+18 Instruction: 0x210820
+REG_DEST: 1
+JUMP: 0
+BRANCH: 0
+MEM_READ: 0
+MEM_TO_REG: 0
+ALU_OP: 2
+MEM_WRITE: 0
+ALU_SRC: 0
+REG_WRITE: 1
+
+===== Instruction Fields =====
+instruction: 0x210820
+opcode: 0 (0x0)
+rs: 1 (0x1)
+rt: 1 (0x1)
+rd: 1 (0x1)
+shamt: 0 (0x0)
+funct: 32 (0x20)
+immediate: 2080 (0x820)
+jump address: 2164768 (0x210820)
+read_data_1: 0 (0x0)
+read_data_2: 0 (0x0)
+=============================
+EX: imm = 820
+EX: ALU result = 2
+EX: ALU op = 1 1
+
+CYCLE 6
+R[0]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+PC: 0x1c
+1c Instruction: 0xac020008
+REG_DEST: 0
+JUMP: 0
+BRANCH: 0
+MEM_READ: 0
+MEM_TO_REG: 0
+ALU_OP: 0
+MEM_WRITE: 1
+ALU_SRC: 1
+REG_WRITE: 0
+
+===== Instruction Fields =====
+instruction: 0xac020008
+opcode: 43 (0x2b)
+rs: 0 (0x0)
+rt: 2 (0x2)
+rd: 0 (0x0)
+shamt: 0 (0x0)
+funct: 8 (0x8)
+immediate: 8 (0x8)
+jump address: 131080 (0x20008)
+read_data_1: 0 (0x0)
+read_data_2: 0 (0x0)
+=============================
+EX: imm = 8
+EX: ALU result = 8
+EX: ALU op = 0 8
+
+CYCLE 7
+R[0]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+PC: 0x20
+20 Instruction: 0x8c030008
+REG_DEST: 0
+JUMP: 0
+BRANCH: 0
+MEM_READ: 1
+MEM_TO_REG: 1
+ALU_OP: 0
+MEM_WRITE: 0
+ALU_SRC: 1
+REG_WRITE: 1
+
+===== Instruction Fields =====
+instruction: 0x8c030008
+opcode: 35 (0x23)
+rs: 0 (0x0)
+rt: 3 (0x3)
+rd: 0 (0x0)
+shamt: 0 (0x0)
+funct: 8 (0x8)
+immediate: 8 (0x8)
+jump address: 196616 (0x30008)
+read_data_1: 0 (0x0)
+read_data_2: 0 (0x0)
+=============================
+EX: imm = 8
+EX: ALU result = 8
+EX: ALU op = 0 8
+
+CYCLE 8
+R[0]: 0
+R[1]: 2
+R[2]: 1
+R[3]: 1
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+PC: 0x24
+24 Instruction: 0x210820
+REG_DEST: 1
+JUMP: 0
+BRANCH: 0
+MEM_READ: 0
+MEM_TO_REG: 0
+ALU_OP: 2
+MEM_WRITE: 0
+ALU_SRC: 0
+REG_WRITE: 1
+
+===== Instruction Fields =====
+instruction: 0x210820
+opcode: 0 (0x0)
+rs: 1 (0x1)
+rt: 1 (0x1)
+rd: 1 (0x1)
+shamt: 0 (0x0)
+funct: 32 (0x20)
+immediate: 2080 (0x820)
+jump address: 2164768 (0x210820)
+read_data_1: 0 (0x0)
+read_data_2: 0 (0x0)
+=============================
+EX: imm = 820
+EX: ALU result = 4
+EX: ALU op = 2 2
+
+CYCLE 9
+R[0]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+PC: 0x28
+28 Instruction: 0xac010000
+REG_DEST: 0
+JUMP: 0
+BRANCH: 0
+MEM_READ: 0
+MEM_TO_REG: 0
+ALU_OP: 0
+MEM_WRITE: 1
+ALU_SRC: 1
+REG_WRITE: 0
+
+===== Instruction Fields =====
+instruction: 0xac010000
+opcode: 43 (0x2b)
+rs: 0 (0x0)
+rt: 1 (0x1)
+rd: 0 (0x0)
+shamt: 0 (0x0)
+funct: 0 (0x0)
+immediate: 0 (0x0)
+jump address: 65536 (0x10000)
+read_data_1: 0 (0x0)
+read_data_2: 0 (0x0)
+=============================
+EX: imm = 0
+EX: ALU result = 0
+EX: ALU op = 0 0
+
+CYCLE 10
+R[0]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+PC: 0x2c
+2c Instruction: 0x8c040000
 REG_DEST: 0
 JUMP: 0
 BRANCH: 0
@@ -406,333 +721,18 @@ EX: imm = 0
 EX: ALU result = 0
 EX: ALU op = 0 0
 
-CYCLE 6
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x1c
-1c Instruction: 0x8c050000
-REG_DEST: 0
-JUMP: 0
-BRANCH: 0
-MEM_READ: 1
-MEM_TO_REG: 1
-ALU_OP: 0
-MEM_WRITE: 0
-ALU_SRC: 1
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x8c050000
-opcode: 35 (0x23)
-rs: 0 (0x0)
-rt: 5 (0x5)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 327680 (0x50000)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 7
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x20
-20 Instruction: 0x8c060000
-REG_DEST: 0
-JUMP: 0
-BRANCH: 0
-MEM_READ: 1
-MEM_TO_REG: 1
-ALU_OP: 0
-MEM_WRITE: 0
-ALU_SRC: 1
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x8c060000
-opcode: 35 (0x23)
-rs: 0 (0x0)
-rt: 6 (0x6)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 393216 (0x60000)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 8
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x24
-24 Instruction: 0x8c070000
-REG_DEST: 0
-JUMP: 0
-BRANCH: 0
-MEM_READ: 1
-MEM_TO_REG: 1
-ALU_OP: 0
-MEM_WRITE: 0
-ALU_SRC: 1
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x8c070000
-opcode: 35 (0x23)
-rs: 0 (0x0)
-rt: 7 (0x7)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 458752 (0x70000)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 9
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x28
-28 Instruction: 0x3c080023
-REG_DEST: 0
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 3
-MEM_WRITE: 0
-ALU_SRC: 1
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x3c080023
-opcode: 15 (0xf)
-rs: 0 (0x0)
-rt: 8 (0x8)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 35 (0x23)
-immediate: 35 (0x23)
-jump address: 524323 (0x80023)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 23
-EX: ALU result = 230000
-EX: ALU op = 0 23
-
-CYCLE 10
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x2c
-2c Instruction: 0x34090002
-REG_DEST: 0
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 3
-MEM_WRITE: 0
-ALU_SRC: 1
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x34090002
-opcode: 13 (0xd)
-rs: 0 (0x0)
-rt: 9 (0x9)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 2 (0x2)
-immediate: 2 (0x2)
-jump address: 589826 (0x90002)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 2
-EX: ALU result = 2
-EX: ALU op = 0 2
-
 CYCLE 11
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 4
+R[2]: 1
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -756,45 +756,45 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x30
-30 Instruction: 0x280a0001
-REG_DEST: 0
+30 Instruction: 0x210820
+REG_DEST: 1
 JUMP: 0
 BRANCH: 0
 MEM_READ: 0
 MEM_TO_REG: 0
-ALU_OP: 3
+ALU_OP: 2
 MEM_WRITE: 0
-ALU_SRC: 1
+ALU_SRC: 0
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x280a0001
-opcode: 10 (0xa)
-rs: 0 (0x0)
-rt: 10 (0xa)
-rd: 0 (0x0)
+instruction: 0x210820
+opcode: 0 (0x0)
+rs: 1 (0x1)
+rt: 1 (0x1)
+rd: 1 (0x1)
 shamt: 0 (0x0)
-funct: 1 (0x1)
-immediate: 1 (0x1)
-jump address: 655361 (0xa0001)
+funct: 32 (0x20)
+immediate: 2080 (0x820)
+jump address: 2164768 (0x210820)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 1
-EX: ALU result = 1
-EX: ALU op = 0 1
+EX: imm = 820
+EX: ALU result = 8
+EX: ALU op = 4 4
 
 CYCLE 12
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 8
+R[2]: 1
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
 R[11]: 0
 R[12]: 0
@@ -819,47 +819,47 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x34
-34 Instruction: 0x2c0b0001
-REG_DEST: 0
+34 Instruction: 0x421020
+REG_DEST: 1
 JUMP: 0
 BRANCH: 0
 MEM_READ: 0
 MEM_TO_REG: 0
-ALU_OP: 3
+ALU_OP: 2
 MEM_WRITE: 0
-ALU_SRC: 1
+ALU_SRC: 0
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x2c0b0001
-opcode: 11 (0xb)
-rs: 0 (0x0)
-rt: 11 (0xb)
-rd: 0 (0x0)
+instruction: 0x421020
+opcode: 0 (0x0)
+rs: 2 (0x2)
+rt: 2 (0x2)
+rd: 2 (0x2)
 shamt: 0 (0x0)
-funct: 1 (0x1)
-immediate: 1 (0x1)
-jump address: 720897 (0xb0001)
+funct: 32 (0x20)
+immediate: 4128 (0x1020)
+jump address: 4329504 (0x421020)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 1
-EX: ALU result = 1
-EX: ALU op = 0 1
+EX: imm = 1020
+EX: ALU result = 2
+EX: ALU op = 1 1
 
 CYCLE 13
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
+R[11]: 0
 R[12]: 0
 R[13]: 0
 R[14]: 0
@@ -882,48 +882,48 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x38
-38 Instruction: 0x226020
-REG_DEST: 1
+38 Instruction: 0xac010004
+REG_DEST: 0
 JUMP: 0
 BRANCH: 0
 MEM_READ: 0
 MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
+ALU_OP: 0
+MEM_WRITE: 1
+ALU_SRC: 1
+REG_WRITE: 0
 
 ===== Instruction Fields =====
-instruction: 0x226020
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 12 (0xc)
+instruction: 0xac010004
+opcode: 43 (0x2b)
+rs: 0 (0x0)
+rt: 1 (0x1)
+rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 32 (0x20)
-immediate: 24608 (0x6020)
-jump address: 2252832 (0x226020)
+funct: 4 (0x4)
+immediate: 4 (0x4)
+jump address: 65540 (0x10004)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 6020
-EX: ALU result = f
-EX: ALU op = 5 a
+EX: imm = 4
+EX: ALU result = 4
+EX: ALU op = 0 4
 
 CYCLE 14
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
 R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
-R[12]: 15
+R[11]: 0
+R[12]: 0
 R[13]: 0
 R[14]: 0
 R[15]: 0
@@ -945,49 +945,49 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x3c
-3c Instruction: 0x226821
-REG_DEST: 1
+3c Instruction: 0x8c050004
+REG_DEST: 0
 JUMP: 0
 BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
+MEM_READ: 1
+MEM_TO_REG: 1
+ALU_OP: 0
 MEM_WRITE: 0
-ALU_SRC: 0
+ALU_SRC: 1
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x226821
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 13 (0xd)
+instruction: 0x8c050004
+opcode: 35 (0x23)
+rs: 0 (0x0)
+rt: 5 (0x5)
+rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 33 (0x21)
-immediate: 26657 (0x6821)
-jump address: 2254881 (0x226821)
+funct: 4 (0x4)
+immediate: 4 (0x4)
+jump address: 327684 (0x50004)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 6821
-EX: ALU result = f
-EX: ALU op = 5 a
+EX: imm = 4
+EX: ALU result = 4
+EX: ALU op = 0 4
 
 CYCLE 15
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
+R[5]: 8
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
+R[11]: 0
+R[12]: 0
+R[13]: 0
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -1008,7 +1008,7 @@ R[30]: 0
 R[31]: 0
 
 PC: 0x40
-40 Instruction: 0x227024
+40 Instruction: 0x0
 REG_DEST: 1
 JUMP: 0
 BRANCH: 0
@@ -1020,37 +1020,37 @@ ALU_SRC: 0
 REG_WRITE: 1
 
 ===== Instruction Fields =====
-instruction: 0x227024
+instruction: 0x0
 opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 14 (0xe)
+rs: 0 (0x0)
+rt: 0 (0x0)
+rd: 0 (0x0)
 shamt: 0 (0x0)
-funct: 36 (0x24)
-immediate: 28708 (0x7024)
-jump address: 2256932 (0x227024)
+funct: 0 (0x0)
+immediate: 0 (0x0)
+jump address: 0 (0x0)
 read_data_1: 0 (0x0)
 read_data_2: 0 (0x0)
 =============================
-EX: imm = 7024
+EX: imm = 0
 EX: ALU result = 0
-EX: ALU op = 5 a
+EX: ALU op = 0 0
 
 CYCLE 16
 R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
+R[1]: 8
+R[2]: 2
+R[3]: 1
+R[4]: 4
+R[5]: 8
 R[6]: 0
 R[7]: 0
-R[8]: 2293760
-R[9]: 2
+R[8]: 0
+R[9]: 0
 R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
+R[11]: 0
+R[12]: 0
+R[13]: 0
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -1070,760 +1070,4 @@ R[29]: 0
 R[30]: 0
 R[31]: 0
 
-PC: 0x44
-44 Instruction: 0x227827
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x227827
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 15 (0xf)
-shamt: 0 (0x0)
-funct: 39 (0x27)
-immediate: 30759 (0x7827)
-jump address: 2258983 (0x227827)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 7827
-EX: ALU result = fffffff0
-EX: ALU op = 5 a
-
-CYCLE 17
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x48
-48 Instruction: 0x228025
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x228025
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 16 (0x10)
-shamt: 0 (0x0)
-funct: 37 (0x25)
-immediate: 32805 (0x8025)
-jump address: 2261029 (0x228025)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffff8025
-EX: ALU result = f
-EX: ALU op = 5 a
-
-CYCLE 18
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x4c
-4c Instruction: 0x22882a
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x22882a
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 17 (0x11)
-shamt: 0 (0x0)
-funct: 42 (0x2a)
-immediate: 34858 (0x882a)
-jump address: 2263082 (0x22882a)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffff882a
-EX: ALU result = 1
-EX: ALU op = 5 a
-
-CYCLE 19
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x50
-50 Instruction: 0x41902b
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x41902b
-opcode: 0 (0x0)
-rs: 2 (0x2)
-rt: 1 (0x1)
-rd: 18 (0x12)
-shamt: 0 (0x0)
-funct: 43 (0x2b)
-immediate: 36907 (0x902b)
-jump address: 4296747 (0x41902b)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffff902b
-EX: ALU result = 0
-EX: ALU op = a 5
-
-CYCLE 20
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x54
-54 Instruction: 0x19880
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x19880
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 1 (0x1)
-rd: 19 (0x13)
-shamt: 2 (0x2)
-funct: 0 (0x0)
-immediate: 39040 (0x9880)
-jump address: 104576 (0x19880)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffff9880
-EX: ALU result = 14
-EX: ALU op = 2 5
-
-CYCLE 21
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x58
-58 Instruction: 0x2a042
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x2a042
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 2 (0x2)
-rd: 20 (0x14)
-shamt: 1 (0x1)
-funct: 2 (0x2)
-immediate: 41026 (0xa042)
-jump address: 172098 (0x2a042)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffffa042
-EX: ALU result = 5
-EX: ALU op = 1 a
-
-CYCLE 22
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x5c
-5c Instruction: 0x22a822
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x22a822
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 21 (0x15)
-shamt: 0 (0x0)
-funct: 34 (0x22)
-immediate: 43042 (0xa822)
-jump address: 2271266 (0x22a822)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffffa822
-EX: ALU result = fffffffb
-EX: ALU op = 5 a
-
-CYCLE 23
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x60
-60 Instruction: 0x22b023
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x22b023
-opcode: 0 (0x0)
-rs: 1 (0x1)
-rt: 2 (0x2)
-rd: 22 (0x16)
-shamt: 0 (0x0)
-funct: 35 (0x23)
-immediate: 45091 (0xb023)
-jump address: 2273315 (0x22b023)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = ffffb023
-EX: ALU result = fffffffb
-EX: ALU op = 5 a
-
-CYCLE 24
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x64
-64 Instruction: 0x0
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x0
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 0 (0x0)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 25
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x68
-68 Instruction: 0x0
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x0
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 0 (0x0)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 26
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x6c
-6c Instruction: 0x0
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x0
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 0 (0x0)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 27
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-PC: 0x70
-70 Instruction: 0x0
-REG_DEST: 1
-JUMP: 0
-BRANCH: 0
-MEM_READ: 0
-MEM_TO_REG: 0
-ALU_OP: 2
-MEM_WRITE: 0
-ALU_SRC: 0
-REG_WRITE: 1
-
-===== Instruction Fields =====
-instruction: 0x0
-opcode: 0 (0x0)
-rs: 0 (0x0)
-rt: 0 (0x0)
-rd: 0 (0x0)
-shamt: 0 (0x0)
-funct: 0 (0x0)
-immediate: 0 (0x0)
-jump address: 0 (0x0)
-read_data_1: 0 (0x0)
-read_data_2: 0 (0x0)
-=============================
-EX: imm = 0
-EX: ALU result = 0
-EX: ALU op = 0 0
-
-CYCLE 28
-R[0]: 0
-R[1]: 5
-R[2]: 10
-R[3]: 0
-R[4]: 0
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 2293760
-R[9]: 2
-R[10]: 1
-R[11]: 1
-R[12]: 15
-R[13]: 15
-R[14]: 0
-R[15]: -16
-R[16]: 15
-R[17]: 1
-R[18]: 0
-R[19]: 20
-R[20]: 5
-R[21]: -5
-R[22]: -5
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-Completed execution in 1812.5 nanoseconds.
+Completed execution in 1062.5 nanoseconds.

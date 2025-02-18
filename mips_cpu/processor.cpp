@@ -144,6 +144,8 @@ std::cout << "=============================\n" << std::dec;
 
 struct IF_ID_reg {
     uint32_t instruction;
+    uint32_t pc;
+    
 };
 
 struct ID_EX_reg {
@@ -180,6 +182,7 @@ struct ID_EX_reg {
     bool link;
     uint32_t branch_target;
     uint32_t jump_target;
+    uint32_t pc;
 };
 
 struct EX_MEM_reg {
@@ -199,6 +202,7 @@ struct EX_MEM_reg {
     uint32_t branch_target;
     bool jump;
     uint32_t jump_target;
+    uint32_t pc;
 };
 
 struct MEM_WB_reg {
@@ -208,10 +212,8 @@ struct MEM_WB_reg {
     
     bool reg_write;
     bool mem_to_reg;
+    uint32_t pc;
 };
-
-
-
 
 
 void Processor::pipelined_processor_advance() {
@@ -219,9 +221,10 @@ void Processor::pipelined_processor_advance() {
     static ID_EX_reg id_ex;
     static EX_MEM_reg ex_mem;
     static MEM_WB_reg mem_wb;
+    static uint32_t current_pc = 0;
     
     bool flush = false;
-    uint32_t new_pc = regfile.pc + 4;  // Default next PC
+    uint32_t new_pc = current_pc + 4;  // Default next PC
 
     // Print pipeline state
     std::cout << "\n============ PIPELINE REGISTERS STATE ============\n";
@@ -229,6 +232,7 @@ void Processor::pipelined_processor_advance() {
     // Print IF/ID Register
     std::cout << "\n----- IF/ID Register -----\n";
     std::cout << "instruction: 0x" << std::hex << if_id.instruction << std::dec << "\n";
+    std::cout << "pc: 0x" << std::hex << if_id.pc << std::dec << "\n";
     
     // Print ID/EX Register
     std::cout << "\n----- ID/EX Register -----\n";
@@ -241,6 +245,7 @@ void Processor::pipelined_processor_advance() {
     std::cout << "shamt: " << id_ex.shamt << "\n";
     std::cout << "funct: " << id_ex.funct << "\n";
     std::cout << "imm: 0x" << std::hex << id_ex.imm << std::dec << "\n";
+    std::cout << "pc: 0x" << std::hex << id_ex.pc << std::dec << "\n";
     std::cout << "Control Signals:\n";
     std::cout << "  ALU_src: " << id_ex.ALU_src << "\n";
     std::cout << "  reg_dest: " << id_ex.reg_dest << "\n";
@@ -264,6 +269,7 @@ void Processor::pipelined_processor_advance() {
     std::cout << "alu_result: 0x" << std::hex << ex_mem.alu_result << std::dec << "\n";
     std::cout << "write_data: 0x" << std::hex << ex_mem.write_data << std::dec << "\n";
     std::cout << "write_reg: " << ex_mem.write_reg << "\n";
+    std::cout << "pc: 0x" << std::hex << ex_mem.pc << std::dec << "\n";
     std::cout << "Control Signals:\n";
     std::cout << "  mem_read: " << ex_mem.mem_read << "\n";
     std::cout << "  mem_write: " << ex_mem.mem_write << "\n";
@@ -280,6 +286,7 @@ void Processor::pipelined_processor_advance() {
     std::cout << "read_data: 0x" << std::hex << mem_wb.read_data << std::dec << "\n";
     std::cout << "alu_result: 0x" << std::hex << mem_wb.alu_result << std::dec << "\n";
     std::cout << "write_reg: " << mem_wb.write_reg << "\n";
+    std::cout << "pc: 0x" << std::hex << mem_wb.pc << std::dec << "\n";
     std::cout << "Control Signals:\n";
     std::cout << "  reg_write: " << mem_wb.reg_write << "\n";
     std::cout << "  mem_to_reg: " << mem_wb.mem_to_reg << "\n";
@@ -289,8 +296,12 @@ void Processor::pipelined_processor_advance() {
     if (mem_wb.reg_write) {
         uint32_t read_data_1, read_data_2;
         write_data = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+        if (id_ex.link) {
+            write_data = mem_wb.pc + 4;  // For jal instruction, save PC+4
+        }
         regfile.access(0, 0, read_data_1, read_data_2, mem_wb.write_reg, true, write_data);
     }
+    regfile.pc = mem_wb.pc;  // Update regfile PC to match WB stage PC
     
     // MEM Stage
     uint32_t mem_result = 0;
@@ -355,6 +366,10 @@ void Processor::pipelined_processor_advance() {
         }
     }
 
+    if (flush){
+        std::cout << "pipeline flushed " << "\n";
+    }
+    
     // Update pipeline registers
     if (!stall) {
         // MEM/WB ← EX/MEM
@@ -363,6 +378,7 @@ void Processor::pipelined_processor_advance() {
         mem_wb.write_reg = ex_mem.write_reg;
         mem_wb.reg_write = ex_mem.reg_write;
         mem_wb.mem_to_reg = ex_mem.mem_to_reg;
+        mem_wb.pc = ex_mem.pc;  // Update PC
 
         // EX/MEM ← ID/EX
         ex_mem.alu_result = ex_result;
@@ -376,9 +392,9 @@ void Processor::pipelined_processor_advance() {
         ex_mem.branch_target = id_ex.branch_target;
         ex_mem.jump = id_ex.jump || id_ex.jump_reg;
         ex_mem.jump_target = id_ex.jump_target;
+        ex_mem.pc = id_ex.pc;  // Update PC
 
         if (!flush) {
-
             // ID/EX ← IF/ID
             control_t control;
             control.decode(if_id.instruction);
@@ -390,9 +406,24 @@ void Processor::pipelined_processor_advance() {
             id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
             id_ex.funct = if_id.instruction & 0x3f;
             id_ex.imm = (if_id.instruction & 0xffff);
+            id_ex.pc = if_id.pc; 
             
+            // Sign/Zero extension of immediate
             id_ex.imm = control.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
             
+            // Calculate jump and branch targets in decode stage
+            if (control.jump && !control.jump_reg) {
+                // J-type instruction (j, jal)
+                uint32_t jump_addr = if_id.instruction & 0x03FFFFFF;  // Extract 26-bit immediate
+                id_ex.jump_target = (if_id.pc & 0xF0000000) | (jump_addr << 2);  // Use IF/ID PC
+            }
+            
+            if (control.branch) {
+                // Branch instructions (beq, bne)
+                id_ex.branch_target = if_id.pc + 4 + (id_ex.imm << 2);  // Use IF/ID PC
+            }
+            
+            // Access register file
             regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, false, 0);
             
             // Control signals
@@ -411,7 +442,7 @@ void Processor::pipelined_processor_advance() {
             id_ex.jump = control.jump;
             id_ex.jump_reg = control.jump_reg;
             id_ex.link = control.link;
-            } else {
+        } else {
             // Clear ID/EX on flush
             memset(&id_ex, 0, sizeof(ID_EX_reg));
         }
@@ -419,15 +450,16 @@ void Processor::pipelined_processor_advance() {
         // IF Stage
         if (!flush) {
             uint32_t next_instruction;
-            memory->access(regfile.pc, next_instruction, 0, 1, 0);
-            std::cout << "IF Stage - PC: 0x" << std::hex << regfile.pc 
+            memory->access(current_pc, next_instruction, 0, 1, 0);
+            std::cout << "IF Stage - PC: 0x" << std::hex << current_pc 
                         << " Instruction: 0x" << next_instruction << std::dec << "\n";
             if_id.instruction = next_instruction;
+            if_id.pc = current_pc;  // Update PC in IF/ID register
         } else {
             memset(&if_id, 0, sizeof(IF_ID_reg));
         }
         
-        regfile.pc = new_pc;
+        current_pc = new_pc;
     } else {
         // Stall case
         // Update MEM/WB normally
@@ -436,9 +468,6 @@ void Processor::pipelined_processor_advance() {
         mem_wb.write_reg = ex_mem.write_reg;
         mem_wb.reg_write = ex_mem.reg_write;
         mem_wb.mem_to_reg = ex_mem.mem_to_reg;
+        mem_wb.pc = ex_mem.pc;  // Update PC even during stall
     }
 }
-
-    
-
-
