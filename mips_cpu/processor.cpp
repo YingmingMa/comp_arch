@@ -71,20 +71,20 @@ void Processor::single_cycle_processor_advance() {
     uint32_t read_data_1 = 0;
     uint32_t read_data_2 = 0;
 
-    // Print instruction fields
-std::cout << "\n===== Instruction Fields =====\n";
-std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
-std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
-std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
-std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
-std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
-std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
-std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
-std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
-std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
-std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
-std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
-std::cout << "=============================\n" << std::dec;
+//     // Print instruction fields
+// std::cout << "\n===== Instruction Fields =====\n";
+// std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
+// std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
+// std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
+// std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
+// std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
+// std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
+// std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
+// std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
+// std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
+// std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
+// std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
+// std::cout << "=============================\n" << std::dec;
     
     // Read from reg file
     regfile.access(rs, rt, read_data_1, read_data_2, 0, 0, 0);
@@ -139,6 +139,7 @@ std::cout << "=============================\n" << std::dec;
 
 struct IF_ID_reg {
     uint32_t instruction;
+    uint32_t pc;
 };
 
 struct ID_EX_reg {
@@ -176,26 +177,30 @@ struct ID_EX_reg {
     bool link;              // 1 if jal
     uint32_t branch_target;
     uint32_t jump_target;
+
+    uint32_t pc;
 };
 
-// struct EX_MEM_reg {
-//     uint32_t alu_result;
-//     uint32_t write_data;
-//     int write_reg;
+struct EX_MEM_reg {
+    uint32_t alu_result;
+    uint32_t write_data;
+    int write_reg;
     
-//     bool mem_read;
-//     bool mem_write;
-//     bool halfword;
-//     bool byte;
-//     bool reg_write;
-//     bool mem_to_reg;
+    bool mem_read;
+    bool mem_write;
+    bool halfword;
+    bool byte;
+    bool reg_write;
+    bool mem_to_reg;
     
-//     // Branch results
-//     bool branch_taken;
-//     uint32_t branch_target;
-//     bool jump;
-//     uint32_t jump_target;
-// };
+    // Branch results
+    bool branch_taken;
+    uint32_t branch_target;
+    bool jump;
+    uint32_t jump_target;
+
+    uint32_t pc;
+};
 
 // struct MEM_WB_reg {
 //     uint32_t read_data;
@@ -204,6 +209,8 @@ struct ID_EX_reg {
     
 //     bool reg_write;
 //     bool mem_to_reg;
+
+//     uint32_t pc;
 // };
 
 
@@ -211,7 +218,7 @@ struct ID_EX_reg {
 void Processor::pipelined_processor_advance() {
     static IF_ID_reg if_id;
     static ID_EX_reg id_ex;
-    // static EX_MEM_reg ex_mem;
+    static EX_MEM_reg ex_mem;
     // static MEM_WB_reg mem_wb;
 
     // fetch
@@ -229,6 +236,23 @@ void Processor::pipelined_processor_advance() {
     control.decode(if_id.instruction);
     DEBUG(control.print());
 
+    // Copy Control Signals Control signals
+    id_ex.ALU_src = control.ALU_src;
+    id_ex.reg_dest = control.reg_dest;
+    id_ex.ALU_op = control.ALU_op;
+    id_ex.shift = control.shift;
+    id_ex.mem_read = control.mem_read;
+    id_ex.mem_write = control.mem_write;
+    id_ex.reg_write = control.reg_write;
+    id_ex.mem_to_reg = control.mem_to_reg;
+    id_ex.branch = control.branch;
+    id_ex.bne = control.bne;
+    id_ex.jump = control.jump;
+    id_ex.jump_reg = control.jump_reg;
+    id_ex.link = control.link;
+    id_ex.halfword = control.halfword;
+    id_ex.byte = control.byte;
+
     // extract rs, rt, rd, imm, funct 
     id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
     id_ex.rs = (if_id.instruction >> 21) & 0x1f;
@@ -238,39 +262,40 @@ void Processor::pipelined_processor_advance() {
     id_ex.funct = if_id.instruction & 0x3f;
     id_ex.imm = (if_id.instruction & 0xffff);
     id_ex.addr = if_id.instruction & 0x3ffffff;
-    // Variables to read data into
-    uint32_t read_data_1 = 0;
-    uint32_t read_data_2 = 0;
+
+    // Calculate jump and branch targets in decode stage
+    uint32_t jump_addr = if_id.instruction & 0x03FFFFFF;  
+    id_ex.jump_target = (if_id.pc & 0xF0000000) | (jump_addr << 2);  
+    id_ex.branch_target = if_id.pc + 4 + (id_ex.imm << 2); 
+    
+    // Sign Extend Or Zero Extend the immediate (seems like it is in ID stage from graph)
+    // Using Arithmetic right shift in order to replicate 1 
+    id_ex.imm = control.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
 
     // Read from reg file
-    regfile.access(id_ex.rs, rt, read_data_1, read_data_2, 0, 0, 0);
+    regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
     
     // Execution 
-    alu.generate_control_inputs(control.ALU_op, funct, id_ex.opcode);
-   
-    // Sign Extend Or Zero Extend the immediate
-    // Using Arithmetic right shift in order to replicate 1 
-    imm = control.zero_extend ? imm : (imm >> 15) ? 0xffff0000 | imm : imm;
+    alu.generate_control_inputs(control.ALU_op, id_ex.funct, id_ex.opcode);
     
     // Find operands for the ALU Execution
     // Operand 1 is always R[rs] -> read_data_1, except sll and srl
     // Operand 2 is immediate if ALU_src = 1, for I-type
-    uint32_t operand_1 = control.shift ? shamt : read_data_1;
-    uint32_t operand_2 = control.ALU_src ? imm : read_data_2;
+    uint32_t operand_1 = control.shift ? id_ex.shamt : read_data_1;
+    uint32_t operand_2 = control.ALU_src ? id_ex.imm : read_data_2;
     uint32_t alu_zero = 0;
 
     uint32_t alu_result = alu.execute(operand_1, operand_2, alu_zero);
-    DEBUG(std::cout << "EX: imm = " << std::hex << imm <<::dec << "\n");
+    DEBUG(std::cout << "EX: imm = " << std::hex << id_ex.imm <<::dec << "\n");
     DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
     DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
 
     
     
-    
+    // Memory    
     uint32_t read_data_mem = 0;
     uint32_t write_data_mem = 0;
 
-    // Memory
     // First read no matter whether it is a load or a store
     memory->access(alu_result, read_data_mem, 0, control.mem_read | control.mem_write, 0);
     // Stores: sb or sh mask and preserve original leftmost bits
