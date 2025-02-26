@@ -134,7 +134,7 @@ void Processor::single_cycle_processor_advance() {
     
     // Update PC
     regfile.pc += (control.branch && !control.bne && alu_zero) || (control.bne && !alu_zero) ? imm << 2 : 0; 
-    regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc;
+    regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc; // changed the & to | which seems to make more sense
 }
 
 struct IF_ID_reg {
@@ -175,8 +175,8 @@ struct ID_EX_reg {
     bool jump;              // 1 if jummp
     bool jump_reg;          // 1 if jr
     bool link;              // 1 if jal
-    uint32_t branch_target;
-    uint32_t jump_target;
+    // uint32_t branch_target;
+    // uint32_t jump_target;
 
     uint32_t pc;
 };
@@ -198,20 +198,21 @@ struct EX_MEM_reg {
     uint32_t branch_target;
     bool jump;
     uint32_t jump_target;
+    bool link;              // 1 if jal
 
     uint32_t pc;
 };
 
-// struct MEM_WB_reg {
-//     uint32_t read_data;
-//     uint32_t alu_result;
-//     int write_reg;
+struct MEM_WB_reg {
+    uint32_t read_data;
+    uint32_t alu_result;
+    int write_reg;
     
-//     bool reg_write;
-//     bool mem_to_reg;
+    bool reg_write;
+    bool mem_to_reg;
 
-//     uint32_t pc;
-// };
+    uint32_t pc;
+};
 
 
 
@@ -219,7 +220,7 @@ void Processor::pipelined_processor_advance() {
     static IF_ID_reg if_id;
     static ID_EX_reg id_ex;
     static EX_MEM_reg ex_mem;
-    // static MEM_WB_reg mem_wb;
+    static MEM_WB_reg mem_wb;
 
     // fetch
     uint32_t instruction;
@@ -252,6 +253,7 @@ void Processor::pipelined_processor_advance() {
     id_ex.link = control.link;
     id_ex.halfword = control.halfword;
     id_ex.byte = control.byte;
+    id_ex.pc = if_id.pc;
 
     // extract rs, rt, rd, imm, funct 
     id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
@@ -262,12 +264,6 @@ void Processor::pipelined_processor_advance() {
     id_ex.funct = if_id.instruction & 0x3f;
     id_ex.imm = (if_id.instruction & 0xffff);
     id_ex.addr = if_id.instruction & 0x3ffffff;
-
-    // //may not be necessary in decode
-    // // Calculate jump and branch targets in decode stage
-    // uint32_t jump_addr = if_id.instruction & 0x03FFFFFF;  
-    // id_ex.jump_target = (if_id.pc & 0xF0000000) | (jump_addr << 2);  
-    // id_ex.branch_target = if_id.pc + 4 + (id_ex.imm << 2); 
     
     // Sign Extend Or Zero Extend the immediate (seems like it is in ID stage from graph)
     // Using Arithmetic right shift in order to replicate 1 
@@ -282,8 +278,8 @@ void Processor::pipelined_processor_advance() {
     // Find operands for the ALU Execution
     // Operand 1 is always R[rs] -> read_data_1, except sll and srl
     // Operand 2 is immediate if ALU_src = 1, for I-type
-    uint32_t operand_1 = id_ex.shift ? id_ex.shamt : read_data_1;
-    uint32_t operand_2 = id_ex.ALU_src ? id_ex.imm : read_data_2;
+    uint32_t operand_1 = id_ex.shift ? id_ex.shamt : id_ex.read_data_1;
+    uint32_t operand_2 = id_ex.ALU_src ? id_ex.imm : id_ex.read_data_2;
     uint32_t alu_zero = 0;
 
     uint32_t alu_result = alu.execute(operand_1, operand_2, alu_zero);
@@ -291,42 +287,57 @@ void Processor::pipelined_processor_advance() {
     DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
     DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
 
+    bool actual_branch_taken = (id_ex.branch && !id_ex.bne && alu_zero) || (id_ex.bne && !alu_zero);
+
+    // Calculate jump and branch targets in decode stage
+    ex_mem.jump_target = control.jump_reg ? id_ex.read_data_1 : (id_ex.pc & 0xF0000000) & (id_ex.addr << 2);  //todo may put & back to | to ensure correctness.
+    ex_mem.branch_target = id_ex.pc + (id_ex.imm << 2); 
+
     // EX/MEM ← ID/EX
     ex_mem.alu_result = alu_result;
-    ex_mem.write_data = id_ex.imm; //todo: may need to change when implementing forward
+    ex_mem.write_data = id_ex.read_data_2;
     ex_mem.write_reg = id_ex.reg_dest ? id_ex.rd : id_ex.rt;
     ex_mem.mem_read = id_ex.mem_read;
     ex_mem.mem_write = id_ex.mem_write;
+    ex_mem.halfword = id_ex.halfword;
+    ex_mem.byte = id_ex.byte;
     ex_mem.reg_write = id_ex.reg_write;
     ex_mem.mem_to_reg = id_ex.mem_to_reg;
     ex_mem.branch_taken = actual_branch_taken;
-    ex_mem.branch_target = id_ex.branch_target;
     ex_mem.jump = id_ex.jump || id_ex.jump_reg;
-    ex_mem.jump_target = id_ex.jump_target;
+    ex_mem.link = id_ex.link;
     ex_mem.pc = id_ex.pc; 
-
-    
     
     // Memory    
     uint32_t read_data_mem = 0;
     uint32_t write_data_mem = 0;
 
     // First read no matter whether it is a load or a store
-    memory->access(alu_result, read_data_mem, 0, control.mem_read | control.mem_write, 0);
+    memory->access(ex_mem.alu_result, read_data_mem, 0, ex_mem.mem_read | ex_mem.mem_write, 0);
     // Stores: sb or sh mask and preserve original leftmost bits
-    write_data_mem = control.halfword ? (read_data_mem & 0xffff0000) | (read_data_2 & 0xffff) : 
-                    control.byte ? (read_data_mem & 0xffffff00) | (read_data_2 & 0xff): read_data_2;
+    write_data_mem = ex_mem.halfword ? (read_data_mem & 0xffff0000) | (ex_mem.write_data & 0xffff) : 
+                    ex_mem.byte ? (read_data_mem & 0xffffff00) | (ex_mem.write_data & 0xff): ex_mem.write_data;
     // Write to memory only if mem_write is 1, i.e store
-    memory->access(alu_result, read_data_mem, write_data_mem, control.mem_read, control.mem_write);
+    memory->access(ex_mem.alu_result, read_data_mem, write_data_mem, ex_mem.mem_read, ex_mem.mem_write);
     // Loads: lbu or lhu modify read data by masking
-    read_data_mem &= control.halfword ? 0xffff : control.byte ? 0xff : 0xffffffff;
+    read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
 
-    int write_reg = control.link ? 31 : control.reg_dest ? rd : rt;
+    int write_reg = ex_mem.link ? 31 : ex_mem.write_reg;
 
-    uint32_t write_data = control.link ? regfile.pc+8 : control.mem_to_reg ? read_data_mem : alu_result;  
+    uint32_t write_data = ex_mem.link ? ex_mem.pc+8 : ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;  
+
+    //update MEM/WB
+    mem_wb.alu_result = 
+    mem_wb.mem_to_reg = 
+    mem_wb.read_data = 
+    mem_wb.reg_write = 
+    mem_wb.write_reg = write_reg;
+    mem_wb.pc = ex_mem.pc;
+
+    uint32_t temp = 0;
 
     // Write Back
-    regfile.access(0, 0, read_data_2, read_data_2, write_reg, control.reg_write, write_data);
+    regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, write_data);
     
     // Update PC
     regfile.pc += (control.branch && !control.bne && alu_zero) || (control.bne && !alu_zero) ? imm << 2 : 0; 
