@@ -219,13 +219,40 @@ struct MEM_WB_reg {
 
 
 void Processor::pipelined_processor_advance() {
-    static IF_ID_reg if_id;
-    static ID_EX_reg id_ex;
-    static EX_MEM_reg ex_mem;
-    static MEM_WB_reg mem_wb;
-    static bool stall; //boolean to indicate stall in pipeline.
-    static bool flush;
-    static uint32_t forward_pc;
+    // static IF_ID_reg if_id;
+    // static ID_EX_reg id_ex;
+    // static EX_MEM_reg ex_mem;
+    // static MEM_WB_reg mem_wb;
+    // static bool stall; //boolean to indicate stall in pipeline.
+    // static bool flush;
+    // static uint32_t forward_pc;
+
+    static IF_ID_reg if_id = { 0, 0 };
+    static ID_EX_reg id_ex = {
+        0, 0,    // read_data_1, read_data_2
+        0, 0, 0, 0, 0, 0, 0, 0,  // opcode, rs, rt, rd, shamt, funct, imm, addr
+        false, false, 0,        // ALU_src, reg_dest, ALU_op
+        false, false, false, false, false, false, false,  // shift, mem_read, mem_write, halfword, byte, reg_write, mem_to_reg
+        false, false, false, false, false,          // zero_extend, branch, bne, jump, jump_reg, link
+        0     // pc
+    };
+    static EX_MEM_reg ex_mem = {
+        0, 0, 0,              // alu_result, write_data, write_reg
+        false, false,         // mem_read, mem_write
+        false, false,         // halfword, byte
+        false, false,         // reg_write, mem_to_reg
+        false, 0,             // branch_taken, branch_target
+        false, 0,             // jump, jump_target
+        false,                // link
+        0                     // pc
+    };
+    static MEM_WB_reg mem_wb = {
+        0, 0, false,         // write_data, write_reg, reg_write
+        false, 0             // branch_taken, pc
+    };
+    static bool stall = false;
+    static bool flush = false;
+    static uint32_t forward_pc = 0;
 
     // fetch
     uint32_t instruction;
