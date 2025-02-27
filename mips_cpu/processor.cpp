@@ -168,6 +168,7 @@ struct ID_EX_reg {
     bool byte;              // 1 if loading/storing a byte from memory
     bool reg_write;         // 1 if need to write back to reg file
     bool mem_to_reg;        // 1 if memory needs to written to reg
+    bool zero_extend;       // 1 if immediate needs to be zero-extended
 
     // Branch/Jump control
     bool branch;            // 1 if branch
@@ -273,6 +274,7 @@ void Processor::pipelined_processor_advance() {
         id_ex.link = control.link;
         id_ex.halfword = control.halfword;
         id_ex.byte = control.byte;
+        id_ex.zero_extend = control.zero_extend;
         id_ex.pc = if_id.pc;
 
         // extract rs, rt, rd, imm, funct 
@@ -284,10 +286,6 @@ void Processor::pipelined_processor_advance() {
         id_ex.funct = if_id.instruction & 0x3f;
         id_ex.imm = (if_id.instruction & 0xffff);
         id_ex.addr = if_id.instruction & 0x3ffffff;
-        
-        // Sign Extend Or Zero Extend the immediate (seems like it is in ID stage from graph)
-        // Using Arithmetic right shift in order to replicate 1 
-        id_ex.imm = control.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
 
         // Read from reg file
         // todo may need reg file forwarding explicitly
@@ -333,6 +331,10 @@ void Processor::pipelined_processor_advance() {
     
 
     alu.generate_control_inputs(id_ex.ALU_op, id_ex.funct, id_ex.opcode);
+
+    // Sign Extend Or Zero Extend the immediate
+    // Using Arithmetic right shift in order to replicate 1 
+    id_ex.imm = id_ex.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
     
     // Find operands for the ALU Execution
     // Operand 1 is always R[rs] -> read_data_1, except sll and srl
