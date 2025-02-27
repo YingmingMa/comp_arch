@@ -183,7 +183,7 @@ struct ID_EX_reg {
 
 struct EX_MEM_reg {
     uint32_t alu_result;
-    uint32_t write_data;
+    uint32_t write_data; //write data to memory
     int write_reg;
     
     bool mem_read;          // 1 if memory needs to be read
@@ -205,7 +205,7 @@ struct EX_MEM_reg {
 
 struct MEM_WB_reg {
     //write back reg
-    uint32_t write_data;
+    uint32_t write_data; //write data to register
     int write_reg;
     bool reg_write;
 
@@ -222,58 +222,109 @@ void Processor::pipelined_processor_advance() {
     static ID_EX_reg id_ex;
     static EX_MEM_reg ex_mem;
     static MEM_WB_reg mem_wb;
+    static bool stall; //boolean to indicate stall in pipeline.
 
     // fetch
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
     // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
 
-    // increment pc
-    if_id.pc = regfile.pc + 4;
+    if (!stall){
+        // increment pc
+        if_id.pc = regfile.pc + 4;
 
-    //todo: may need conditiond so that will will stall
-    if_id.instruction = instruction;
+        //todo: may need conditiond so that will will stall
+        if_id.instruction = instruction;
+
+        stall = false;
+    }
+    
     
     // decode into contol signals
     control.decode(if_id.instruction);
     DEBUG(control.print());
 
-    // Copy Control Signals Control signals
-    id_ex.ALU_src = control.ALU_src;
-    id_ex.reg_dest = control.reg_dest;
-    id_ex.ALU_op = control.ALU_op;
-    id_ex.shift = control.shift;
-    id_ex.mem_read = control.mem_read;
-    id_ex.mem_write = control.mem_write;
-    id_ex.reg_write = control.reg_write;
-    id_ex.mem_to_reg = control.mem_to_reg;
-    id_ex.branch = control.branch;
-    id_ex.bne = control.bne;
-    id_ex.jump = control.jump;
-    id_ex.jump_reg = control.jump_reg;
-    id_ex.link = control.link;
-    id_ex.halfword = control.halfword;
-    id_ex.byte = control.byte;
-    id_ex.pc = if_id.pc;
+    // stall detection
+    int rs = (if_id.instruction >> 21) & 0x1f;
+    int rt = (if_id.instruction >> 16) & 0x1f;
+    if (id_ex.mem_read && (id_ex.rt == rs || id_ex.rt == rt)){
+        stall = true;
+    }
 
-    // extract rs, rt, rd, imm, funct 
-    id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
-    id_ex.rs = (if_id.instruction >> 21) & 0x1f;
-    id_ex.rt = (if_id.instruction >> 16) & 0x1f;
-    id_ex.rd = (if_id.instruction >> 11) & 0x1f;
-    id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
-    id_ex.funct = if_id.instruction & 0x3f;
-    id_ex.imm = (if_id.instruction & 0xffff);
-    id_ex.addr = if_id.instruction & 0x3ffffff;
-    
-    // Sign Extend Or Zero Extend the immediate (seems like it is in ID stage from graph)
-    // Using Arithmetic right shift in order to replicate 1 
-    id_ex.imm = control.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
+    if (!stall){ //only update id_ex when it's not a stall
+        // Copy Control Signals Control signals
+        id_ex.ALU_src = control.ALU_src;
+        id_ex.reg_dest = control.reg_dest;
+        id_ex.ALU_op = control.ALU_op;
+        id_ex.shift = control.shift;
+        id_ex.mem_read = control.mem_read;
+        id_ex.mem_write = control.mem_write;
+        id_ex.reg_write = control.reg_write;
+        id_ex.mem_to_reg = control.mem_to_reg;
+        id_ex.branch = control.branch;
+        id_ex.bne = control.bne;
+        id_ex.jump = control.jump;
+        id_ex.jump_reg = control.jump_reg;
+        id_ex.link = control.link;
+        id_ex.halfword = control.halfword;
+        id_ex.byte = control.byte;
+        id_ex.pc = if_id.pc;
 
-    // Read from reg file
-    regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
+        // extract rs, rt, rd, imm, funct 
+        id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
+        id_ex.rs = (if_id.instruction >> 21) & 0x1f;
+        id_ex.rt = (if_id.instruction >> 16) & 0x1f;
+        id_ex.rd = (if_id.instruction >> 11) & 0x1f;
+        id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
+        id_ex.funct = if_id.instruction & 0x3f;
+        id_ex.imm = (if_id.instruction & 0xffff);
+        id_ex.addr = if_id.instruction & 0x3ffffff;
+        
+        // Sign Extend Or Zero Extend the immediate (seems like it is in ID stage from graph)
+        // Using Arithmetic right shift in order to replicate 1 
+        id_ex.imm = control.zero_extend ? id_ex.imm : (id_ex.imm >> 15) ? 0xffff0000 | id_ex.imm : id_ex.imm;
+
+        // Read from reg file
+        // todo may need reg file forwarding explicitly
+        regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
+    } else { //inserting no ops for the following steps for this function
+        id_ex.ALU_src = 0;
+        id_ex.reg_dest = 0;
+        id_ex.ALU_op = 0;
+        id_ex.shift = 0;
+        id_ex.mem_read = 0;
+        id_ex.mem_write = 0;
+        id_ex.reg_write = 0;
+        id_ex.mem_to_reg = 0;
+        id_ex.branch = 0;
+        id_ex.bne = 0;
+        id_ex.jump = 0;
+        id_ex.jump_reg = 0;
+        id_ex.link = 0;
+        id_ex.halfword = 0;
+        id_ex.byte = 0;
+    }
     
     // Execution 
+
+    // forward detection
+    if (ex_mem.reg_write && ex_mem.write_reg != 0 && ex_mem.write_reg == id_ex.rs) {
+        id_ex.read_data_1 = ex_mem.alu_result; // Forward from EX/MEM stage
+    }
+    
+    if (ex_mem.reg_write && ex_mem.write_reg != 0 && ex_mem.write_reg == id_ex.rt) {
+        id_ex.read_data_2 = ex_mem.alu_result; // Forward from EX/MEM stage
+    }
+    
+    if (mem_wb.reg_write && mem_wb.write_reg != 0 && mem_wb.write_reg == id_ex.rs) {
+        id_ex.read_data_1 = mem_wb.write_data; // Forward from MEM/WB stage
+    }
+    
+    if (mem_wb.reg_write && mem_wb.write_reg != 0 && mem_wb.write_reg == id_ex.rt) {
+        id_ex.read_data_2 = mem_wb.write_data; // Forward from MEM/WB stage
+    }
+    
+
     alu.generate_control_inputs(id_ex.ALU_op, id_ex.funct, id_ex.opcode);
     
     // Find operands for the ALU Execution
@@ -336,9 +387,8 @@ void Processor::pipelined_processor_advance() {
     mem_wb.write_reg = write_reg;
     mem_wb.pc = ex_mem.pc;
 
-    uint32_t temp = 0;
-
     // Write Back
+    uint32_t temp = 0;
     regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, mem_wb.write_data);
     
     // Update PC
