@@ -223,8 +223,14 @@ void Processor::pipelined_processor_advance() {
     static EX_MEM_reg ex_mem;
     static MEM_WB_reg mem_wb;
     static bool stall; //boolean to indicate stall in pipeline.
+    static bool flush;
+    static uint32_t forward_pc;
 
     // fetch
+    if (flush){ //if branch prediction, set PC to the correct PC
+        regfile.pc = forward_pc;
+    }
+
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
     // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
@@ -239,8 +245,7 @@ void Processor::pipelined_processor_advance() {
         stall = false;
     }
     
-    
-    // decode into contol signals
+    // decode
     control.decode(if_id.instruction);
     DEBUG(control.print());
 
@@ -251,7 +256,7 @@ void Processor::pipelined_processor_advance() {
         stall = true;
     }
 
-    if (!stall){ //only update id_ex when it's not a stall
+    if (!stall && !flush){ //only update id_ex when it's not a stall
         // Copy Control Signals Control signals
         id_ex.ALU_src = control.ALU_src;
         id_ex.reg_dest = control.reg_dest;
@@ -287,6 +292,8 @@ void Processor::pipelined_processor_advance() {
         // Read from reg file
         // todo may need reg file forwarding explicitly
         regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
+
+        flush = false;
     } else { //inserting no ops for the following steps for this function
         id_ex.ALU_src = 0;
         id_ex.reg_dest = 0;
@@ -344,6 +351,17 @@ void Processor::pipelined_processor_advance() {
     // Calculate jump and branch targets in decode stage
     ex_mem.jump_target = control.jump_reg ? id_ex.read_data_1 : (id_ex.pc & 0xF0000000) & (id_ex.addr << 2);  //todo may put & back to | to ensure correctness.
     ex_mem.branch_target = id_ex.pc + (id_ex.imm << 2);
+
+    if (actual_branch_taken || id_ex.jump || id_ex.jump_reg || id_ex.link) {
+        flush = true;
+        if (id_ex.jump_reg || id_ex.jump) {
+            forward_pc = ex_mem.jump_target;
+        } else if (id_ex.link) {
+            forward_pc = id_ex.pc+8;
+        } else {
+            forward_pc = ex_mem.branch_target;
+        }
+    }
 
     // EX/MEM ← ID/EX
     ex_mem.alu_result = alu_result;
