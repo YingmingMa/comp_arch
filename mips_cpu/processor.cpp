@@ -204,12 +204,13 @@ struct EX_MEM_reg {
 };
 
 struct MEM_WB_reg {
-    uint32_t read_data;
-    uint32_t alu_result;
+    //write back reg
+    uint32_t write_data;
     int write_reg;
-    
     bool reg_write;
-    bool mem_to_reg;
+
+    //pc calculation
+    bool branch_taken;
 
     uint32_t pc;
 };
@@ -291,7 +292,7 @@ void Processor::pipelined_processor_advance() {
 
     // Calculate jump and branch targets in decode stage
     ex_mem.jump_target = control.jump_reg ? id_ex.read_data_1 : (id_ex.pc & 0xF0000000) & (id_ex.addr << 2);  //todo may put & back to | to ensure correctness.
-    ex_mem.branch_target = id_ex.pc + (id_ex.imm << 2); 
+    ex_mem.branch_target = id_ex.pc + (id_ex.imm << 2);
 
     // EX/MEM ← ID/EX
     ex_mem.alu_result = alu_result;
@@ -324,24 +325,24 @@ void Processor::pipelined_processor_advance() {
 
     int write_reg = ex_mem.link ? 31 : ex_mem.write_reg;
 
-    uint32_t write_data = ex_mem.link ? ex_mem.pc+8 : ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;  
+    uint32_t write_data = ex_mem.link ? ex_mem.pc+8 : ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
+    
+    ex_mem.pc = ex_mem.branch_taken ? ex_mem.branch_target : ex_mem.pc;
+    ex_mem.pc = ex_mem.jump ? ex_mem.jump_target : ex_mem.pc;
 
     //update MEM/WB
-    mem_wb.alu_result = 
-    mem_wb.mem_to_reg = 
-    mem_wb.read_data = 
-    mem_wb.reg_write = 
+    mem_wb.write_data = write_data;
+    mem_wb.reg_write = ex_mem.reg_write;
     mem_wb.write_reg = write_reg;
     mem_wb.pc = ex_mem.pc;
 
     uint32_t temp = 0;
 
     // Write Back
-    regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, write_data);
+    regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, mem_wb.write_data);
     
     // Update PC
-    regfile.pc += (control.branch && !control.bne && alu_zero) || (control.bne && !alu_zero) ? imm << 2 : 0; 
-    regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc;
+    regfile.pc = mem_wb.pc;
     
 }
 
