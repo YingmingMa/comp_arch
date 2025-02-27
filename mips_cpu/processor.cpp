@@ -134,7 +134,7 @@ void Processor::single_cycle_processor_advance() {
     
     // Update PC
     regfile.pc += (control.branch && !control.bne && alu_zero) || (control.bne && !alu_zero) ? imm << 2 : 0; 
-    regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc; // changed the & to | which seems to make more sense
+    regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) | (addr << 2): regfile.pc; // changed the & to | which seems to make more sense
 }
 
 struct IF_ID_reg {
@@ -227,10 +227,6 @@ void Processor::pipelined_processor_advance() {
     static uint32_t forward_pc;
 
     // fetch
-    if (flush){ //if branch prediction, set PC to the correct PC
-        regfile.pc = forward_pc;
-    }
-
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
     // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
@@ -241,8 +237,10 @@ void Processor::pipelined_processor_advance() {
 
         //todo: may need conditiond so that will will stall
         if_id.instruction = instruction;
+    }
 
-        stall = false;
+    if (flush) {
+        if_id.instruction = 0; 
     }
     
     // decode
@@ -254,6 +252,8 @@ void Processor::pipelined_processor_advance() {
     int rt = (if_id.instruction >> 16) & 0x1f;
     if (id_ex.mem_read && (id_ex.rt == rs || id_ex.rt == rt)){
         stall = true;
+    } else {
+        stall = false;
     }
 
     if (!stall && !flush){ //only update id_ex when it's not a stall
@@ -349,7 +349,7 @@ void Processor::pipelined_processor_advance() {
     bool actual_branch_taken = (id_ex.branch && !id_ex.bne && alu_zero) || (id_ex.bne && !alu_zero);
 
     // Calculate jump and branch targets in decode stage
-    ex_mem.jump_target = control.jump_reg ? id_ex.read_data_1 : (id_ex.pc & 0xF0000000) & (id_ex.addr << 2);  //todo may put & back to | to ensure correctness.
+    ex_mem.jump_target = control.jump_reg ? id_ex.read_data_1 : (id_ex.pc & 0xF0000000) | (id_ex.addr << 2);  //todo may put | back to & to ensure consistency with single cycle provided.
     ex_mem.branch_target = id_ex.pc + (id_ex.imm << 2);
 
     if (actual_branch_taken || id_ex.jump || id_ex.jump_reg || id_ex.link) {
@@ -411,6 +411,10 @@ void Processor::pipelined_processor_advance() {
     
     // Update PC
     regfile.pc = mem_wb.pc;
+
+    if (flush){ //if branch accepted, set PC to the correct PC
+        regfile.pc = forward_pc;
+    }
     
 }
 
