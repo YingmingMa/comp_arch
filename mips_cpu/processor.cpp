@@ -253,13 +253,13 @@ void Processor::pipelined_processor_advance() {
     uint32_t write_data_mem = 0;
     if (ex_mem.mem_read|ex_mem.mem_write) {
         if(ex_mem.mem_read){
-            if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read|ex_mem.mem_write, ex_mem.mem_write)){
+            if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read, ex_mem.mem_write)){
                 return;
             }   
         }
         if(ex_mem.mem_write){
             if (ex_mem.halfword || ex_mem.byte){
-                if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read|ex_mem.mem_write, ex_mem.mem_write)){
+                if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read, ex_mem.mem_write)){
                     return;
                 }
                 write_data_mem = ex_mem.halfword ? (read_data_mem & 0xffff0000) | (ex_mem.write_data & 0xffff) : 
