@@ -254,88 +254,43 @@ void Processor::pipelined_processor_advance() {
     static bool flush = false;
     static uint32_t forward_pc = 0;
 
-    // fetch
-    uint32_t instruction;
-    memory->access(regfile.pc, instruction, 0, 1, 0);
-    // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
-
-    if (!stall){
-        // increment pc
-        if_id.pc = regfile.pc + 4;
-
-        //todo: may need conditiond so that will will stall
-        if_id.instruction = instruction;
-    }
-
-    if (flush) {
-        if_id.instruction = 0; 
-    }
+    // Write Back
+    uint32_t temp = 0;
+    regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, mem_wb.write_data);
     
-    // decode
-    control.decode(if_id.instruction);
-    DEBUG(control.print());
+    // Update PC
+    regfile.pc = mem_wb.pc;
 
-    // stall detection
-    int rs = (if_id.instruction >> 21) & 0x1f;
-    int rt = (if_id.instruction >> 16) & 0x1f;
-    if (id_ex.mem_read && (id_ex.rt == rs || id_ex.rt == rt)){
-        stall = true;
-    } else {
-        stall = false;
+    if (flush){ //if branch accepted, set PC to the correct PC
+        regfile.pc = forward_pc;
     }
 
-    if (!stall && !flush){ //only update id_ex when it's not a stall
-        // Copy Control Signals Control signals
-        id_ex.ALU_src = control.ALU_src;
-        id_ex.reg_dest = control.reg_dest;
-        id_ex.ALU_op = control.ALU_op;
-        id_ex.shift = control.shift;
-        id_ex.mem_read = control.mem_read;
-        id_ex.mem_write = control.mem_write;
-        id_ex.reg_write = control.reg_write;
-        id_ex.mem_to_reg = control.mem_to_reg;
-        id_ex.branch = control.branch;
-        id_ex.bne = control.bne;
-        id_ex.jump = control.jump;
-        id_ex.jump_reg = control.jump_reg;
-        id_ex.link = control.link;
-        id_ex.halfword = control.halfword;
-        id_ex.byte = control.byte;
-        id_ex.zero_extend = control.zero_extend;
-        id_ex.pc = if_id.pc;
+    // Memory    
+    uint32_t read_data_mem = 0;
+    uint32_t write_data_mem = 0;
 
-        // extract rs, rt, rd, imm, funct 
-        id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
-        id_ex.rs = (if_id.instruction >> 21) & 0x1f;
-        id_ex.rt = (if_id.instruction >> 16) & 0x1f;
-        id_ex.rd = (if_id.instruction >> 11) & 0x1f;
-        id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
-        id_ex.funct = if_id.instruction & 0x3f;
-        id_ex.imm = (if_id.instruction & 0xffff);
-        id_ex.addr = if_id.instruction & 0x3ffffff;
+    // First read no matter whether it is a load or a store
+    memory->access(ex_mem.alu_result, read_data_mem, 0, ex_mem.mem_read | ex_mem.mem_write, 0);
+    // Stores: sb or sh mask and preserve original leftmost bits
+    write_data_mem = ex_mem.halfword ? (read_data_mem & 0xffff0000) | (ex_mem.write_data & 0xffff) : 
+                    ex_mem.byte ? (read_data_mem & 0xffffff00) | (ex_mem.write_data & 0xff): ex_mem.write_data;
+    // Write to memory only if mem_write is 1, i.e store
+    memory->access(ex_mem.alu_result, read_data_mem, write_data_mem, ex_mem.mem_read, ex_mem.mem_write);
+    // Loads: lbu or lhu modify read data by masking
+    read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
 
-        // Read from reg file
-        // todo may need reg file forwarding explicitly
-        regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
+    int write_reg = ex_mem.link ? 31 : ex_mem.write_reg;
 
-        flush = false;
-    } else { //inserting no ops for the following steps for this function
-        id_ex.ALU_src = 0;
-        id_ex.reg_dest = 0;
-        id_ex.ALU_op = 0;
-        id_ex.shift = 0;
-        id_ex.mem_read = 0;
-        id_ex.mem_write = 0;
-        id_ex.reg_write = 0;
-        id_ex.mem_to_reg = 0;
-        id_ex.branch = 0;
-        id_ex.bne = 0;
-        id_ex.jump = 0;
-        id_ex.jump_reg = 0;
-        id_ex.link = 0;
-        id_ex.halfword = 0;
-        id_ex.byte = 0;
-    }
+    uint32_t write_data = ex_mem.link ? ex_mem.pc+8 : ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
+    
+    ex_mem.pc = ex_mem.branch_taken ? ex_mem.branch_target : ex_mem.pc;
+    ex_mem.pc = ex_mem.jump ? ex_mem.jump_target : ex_mem.pc;
+
+    //update MEM/WB
+    mem_wb.write_data = write_data;
+    mem_wb.reg_write = ex_mem.reg_write;
+    mem_wb.write_reg = write_reg;
+    mem_wb.pc = ex_mem.pc;
     
     // Execution 
 
@@ -390,6 +345,8 @@ void Processor::pipelined_processor_advance() {
         } else {
             forward_pc = ex_mem.branch_target;
         }
+    } else {
+        flush = false;
     }
 
     // EX/MEM ← ID/EX
@@ -407,43 +364,86 @@ void Processor::pipelined_processor_advance() {
     ex_mem.link = id_ex.link;
     ex_mem.pc = id_ex.pc; 
     
-    // Memory    
-    uint32_t read_data_mem = 0;
-    uint32_t write_data_mem = 0;
+    // decode
+    control.decode(if_id.instruction);
+    DEBUG(control.print());
 
-    // First read no matter whether it is a load or a store
-    memory->access(ex_mem.alu_result, read_data_mem, 0, ex_mem.mem_read | ex_mem.mem_write, 0);
-    // Stores: sb or sh mask and preserve original leftmost bits
-    write_data_mem = ex_mem.halfword ? (read_data_mem & 0xffff0000) | (ex_mem.write_data & 0xffff) : 
-                    ex_mem.byte ? (read_data_mem & 0xffffff00) | (ex_mem.write_data & 0xff): ex_mem.write_data;
-    // Write to memory only if mem_write is 1, i.e store
-    memory->access(ex_mem.alu_result, read_data_mem, write_data_mem, ex_mem.mem_read, ex_mem.mem_write);
-    // Loads: lbu or lhu modify read data by masking
-    read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
-
-    int write_reg = ex_mem.link ? 31 : ex_mem.write_reg;
-
-    uint32_t write_data = ex_mem.link ? ex_mem.pc+8 : ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
-    
-    ex_mem.pc = ex_mem.branch_taken ? ex_mem.branch_target : ex_mem.pc;
-    ex_mem.pc = ex_mem.jump ? ex_mem.jump_target : ex_mem.pc;
-
-    //update MEM/WB
-    mem_wb.write_data = write_data;
-    mem_wb.reg_write = ex_mem.reg_write;
-    mem_wb.write_reg = write_reg;
-    mem_wb.pc = ex_mem.pc;
-
-    // Write Back
-    uint32_t temp = 0;
-    regfile.access(0, 0, temp, temp, mem_wb.write_reg, mem_wb.reg_write, mem_wb.write_data);
-    
-    // Update PC
-    regfile.pc = mem_wb.pc;
-
-    if (flush){ //if branch accepted, set PC to the correct PC
-        regfile.pc = forward_pc;
+    // stall detection
+    int rs = (if_id.instruction >> 21) & 0x1f;
+    int rt = (if_id.instruction >> 16) & 0x1f;
+    if (id_ex.mem_read && (id_ex.rt == rs || id_ex.rt == rt)){
+        stall = true;
+    } else {
+        stall = false;
     }
-    
+
+    if (!stall && !flush){ //only update id_ex when it's not a stall
+        // Copy Control Signals Control signals
+        id_ex.ALU_src = control.ALU_src;
+        id_ex.reg_dest = control.reg_dest;
+        id_ex.ALU_op = control.ALU_op;
+        id_ex.shift = control.shift;
+        id_ex.mem_read = control.mem_read;
+        id_ex.mem_write = control.mem_write;
+        id_ex.reg_write = control.reg_write;
+        id_ex.mem_to_reg = control.mem_to_reg;
+        id_ex.branch = control.branch;
+        id_ex.bne = control.bne;
+        id_ex.jump = control.jump;
+        id_ex.jump_reg = control.jump_reg;
+        id_ex.link = control.link;
+        id_ex.halfword = control.halfword;
+        id_ex.byte = control.byte;
+        id_ex.zero_extend = control.zero_extend;
+        id_ex.pc = if_id.pc;
+
+        // extract rs, rt, rd, imm, funct 
+        id_ex.opcode = (if_id.instruction >> 26) & 0x3f;
+        id_ex.rs = (if_id.instruction >> 21) & 0x1f;
+        id_ex.rt = (if_id.instruction >> 16) & 0x1f;
+        id_ex.rd = (if_id.instruction >> 11) & 0x1f;
+        id_ex.shamt = (if_id.instruction >> 6) & 0x1f;
+        id_ex.funct = if_id.instruction & 0x3f;
+        id_ex.imm = (if_id.instruction & 0xffff);
+        id_ex.addr = if_id.instruction & 0x3ffffff;
+
+        // Read from reg file
+        // todo may need reg file forwarding explicitly
+        regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
+    } else { //inserting no ops for the following steps for this function
+        id_ex.ALU_src = 0;
+        id_ex.reg_dest = 0;
+        id_ex.ALU_op = 0;
+        id_ex.shift = 0;
+        id_ex.mem_read = 0;
+        id_ex.mem_write = 0;
+        id_ex.reg_write = 0;
+        id_ex.mem_to_reg = 0;
+        id_ex.branch = 0;
+        id_ex.bne = 0;
+        id_ex.jump = 0;
+        id_ex.jump_reg = 0;
+        id_ex.link = 0;
+        id_ex.halfword = 0;
+        id_ex.byte = 0;
+    }
+
+    // fetch
+    uint32_t instruction;
+    memory->access(regfile.pc, instruction, 0, 1, 0);
+    // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
+
+    if (!stall){
+        // increment pc
+        if_id.pc = regfile.pc + 4;
+
+        //todo: may need conditiond so that will will stall
+        if_id.instruction = instruction;
+    }
+
+    if (flush) {
+        if_id.instruction = 0; 
+    }
+        
 }
 
