@@ -212,14 +212,13 @@ struct EX_MEM_reg {
 };
 
 struct MEM_WB_reg {
-    uint32_t read_data;
-    uint32_t alu_result;
+    uint32_t write_data;
+
     int write_reg;
     
     bool reg_write;
-    bool mem_to_reg;
+
     uint32_t pc;
-    bool link;
 };
 
 
@@ -236,14 +235,10 @@ void Processor::pipelined_processor_advance() {
     uint32_t new_pc = current_pc + 4;  // Default next PC
 
     // WB Stage
-    uint32_t write_data = 0;
     if (mem_wb.reg_write) {
         uint32_t read_data_1, read_data_2;
-        write_data = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
-        if (mem_wb.link) {
-            write_data = mem_wb.pc + 8;  // For jal instruction, save PC+4
-        }
-        regfile.access(0, 0, read_data_1, read_data_2, mem_wb.write_reg, true, write_data);
+        
+        regfile.access(0, 0, read_data_1, read_data_2, mem_wb.write_reg, true, mem_wb.write_data);
     }
     regfile.pc = mem_wb.pc;  // Update regfile PC to match WB stage PC
 
@@ -282,15 +277,18 @@ void Processor::pipelined_processor_advance() {
             stall = true;
         }
     }
+
+    uint32_t write_data = 0;
+    write_data = ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
+    if (ex_mem.link) {
+        write_data = ex_mem.pc + 8;  // For jal instruction, save PC+4
+    }
         
     // Update MEM/WB
-    mem_wb.alu_result = ex_mem.alu_result;
-    mem_wb.read_data = read_data_mem;
+    mem_wb.write_data = write_data;
     mem_wb.write_reg = ex_mem.write_reg;
     mem_wb.reg_write = ex_mem.reg_write;
-    mem_wb.mem_to_reg = ex_mem.mem_to_reg;
     mem_wb.pc = ex_mem.pc;  
-    mem_wb.link = ex_mem.link;
     
 
     
@@ -306,10 +304,10 @@ void Processor::pipelined_processor_advance() {
     // Forward from MEM/WB (Last stage)
     if (mem_wb.reg_write && mem_wb.write_reg != 0) {
         if (id_ex.rs == mem_wb.write_reg) {
-            forward_data1 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+            forward_data1 = mem_wb.write_data;
         }
         if (id_ex.rt == mem_wb.write_reg) {
-            forward_data2 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+            forward_data2 = mem_wb.write_data;
         }
     }
 
@@ -390,10 +388,10 @@ void Processor::pipelined_processor_advance() {
         // Forward from MEM/WB (Last stage)
         if (mem_wb.reg_write && mem_wb.write_reg != 0) {
             if (id_ex.rs == mem_wb.write_reg) {
-                id_ex.read_data_1 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+                id_ex.read_data_1 = mem_wb.write_data;
             }
             if (id_ex.rt == mem_wb.write_reg) {
-                id_ex.read_data_2 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+                id_ex.read_data_2 = mem_wb.write_data;
             }
         }
 
