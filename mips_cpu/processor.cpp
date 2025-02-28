@@ -253,6 +253,7 @@ void Processor::pipelined_processor_advance() {
     static bool stall = false;
     static bool flush = false;
     static uint32_t forward_pc = 0;
+    static int fetched_pc = 0;
 
     // Write Back
     uint32_t temp = 0;
@@ -262,7 +263,7 @@ void Processor::pipelined_processor_advance() {
     regfile.pc = mem_wb.pc;
 
     if (flush){ //if branch accepted, set PC to the correct PC
-        regfile.pc = forward_pc;
+        fetched_pc = forward_pc;
     }
 
     // Memory    
@@ -418,13 +419,14 @@ void Processor::pipelined_processor_advance() {
     if (!stall){
         uint32_t instruction;
     
-        if(!memory->access(regfile.pc, instruction, 0, 1, 0)){ //acount for memory stall time
+        if(!memory->access(fetched_pc, instruction, 0, 1, 0)){ //acount for memory stall time
             std::cout << "instruction: 0x \n" ;
             memset(&if_id, 0, sizeof(IF_ID_reg));
         } else {
             // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
             // increment pc
-            if_id.pc = regfile.pc + 4;
+            if_id.pc = fetched_pc;
+            fetched_pc = fetched_pc + 4;
 
             if_id.instruction = instruction;
         }
