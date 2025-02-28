@@ -125,7 +125,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -219,7 +219,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -234,7 +234,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -313,7 +313,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -328,7 +328,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -407,7 +407,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -422,7 +422,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -501,7 +501,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -516,7 +516,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -595,7 +595,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -610,7 +610,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -689,7 +689,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -704,7 +704,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -783,7 +783,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -798,7 +798,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -877,7 +877,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -892,7 +892,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -971,7 +971,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -986,7 +986,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1065,7 +1065,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1080,7 +1080,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1159,7 +1159,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1174,7 +1174,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1253,7 +1253,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1268,7 +1268,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1347,7 +1347,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1362,7 +1362,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1441,7 +1441,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1456,7 +1456,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1535,7 +1535,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1550,7 +1550,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1629,7 +1629,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1644,7 +1644,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1723,7 +1723,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1738,7 +1738,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1817,7 +1817,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1832,7 +1832,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -1911,7 +1911,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -1926,7 +1926,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2005,7 +2005,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2020,7 +2020,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2099,7 +2099,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2114,7 +2114,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2193,7 +2193,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2208,7 +2208,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2287,7 +2287,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2302,7 +2302,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2381,7 +2381,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2396,7 +2396,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2475,7 +2475,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2490,7 +2490,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2569,7 +2569,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2584,7 +2584,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2663,7 +2663,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2678,7 +2678,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2757,7 +2757,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2772,7 +2772,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2851,7 +2851,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2866,7 +2866,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -2945,7 +2945,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -2960,7 +2960,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3039,7 +3039,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3054,7 +3054,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3133,7 +3133,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3148,7 +3148,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3227,7 +3227,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3242,7 +3242,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3321,7 +3321,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3336,7 +3336,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3415,7 +3415,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3430,7 +3430,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3509,7 +3509,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3524,7 +3524,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3603,7 +3603,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3618,7 +3618,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3697,7 +3697,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3712,7 +3712,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3791,7 +3791,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3806,7 +3806,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3885,7 +3885,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3900,7 +3900,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -3979,7 +3979,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -3994,7 +3994,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4073,7 +4073,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4088,7 +4088,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4167,7 +4167,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4182,7 +4182,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4261,7 +4261,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4276,7 +4276,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4355,7 +4355,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4370,7 +4370,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4449,7 +4449,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4464,7 +4464,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4543,7 +4543,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4558,7 +4558,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4637,7 +4637,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4652,7 +4652,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4731,7 +4731,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4746,7 +4746,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4825,7 +4825,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4840,7 +4840,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -4919,7 +4919,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -4934,7 +4934,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5013,7 +5013,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5028,7 +5028,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5107,7 +5107,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5122,7 +5122,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5201,7 +5201,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5216,7 +5216,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5295,7 +5295,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5310,7 +5310,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5389,7 +5389,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5404,7 +5404,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5483,7 +5483,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5498,7 +5498,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5577,7 +5577,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5592,7 +5592,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5671,7 +5671,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5686,7 +5686,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5736,7 +5736,7 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20210001
+instruction: 0x20010005
 pc: 0x0
 
 ----- ID/EX Register -----
@@ -5765,7 +5765,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -5780,7 +5780,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5830,19 +5830,19 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20a50005
+instruction: 0x2402000a
 pc: 0x4
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
 opcode: 8
-rs: 1
+rs: 0
 rt: 1
 rd: 0
 shamt: 0
-funct: 1
-imm: 0x1
+funct: 5
+imm: 0x5
 pc: 0x0
 Control Signals:
   ALU_src: 1
@@ -5859,8 +5859,8 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x18
+  jump_target: 0x40014
 
 ----- EX/MEM Register -----
 alu_result: 0x0
@@ -5874,7 +5874,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -5924,19 +5924,19 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x10a50008
+instruction: 0x30030002
 pc: 0x8
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 8
-rs: 5
-rt: 5
+opcode: 9
+rs: 0
+rt: 2
 rd: 0
 shamt: 0
-funct: 5
-imm: 0x5
+funct: 10
+imm: 0xa
 pc: 0x4
 Control Signals:
   ALU_src: 1
@@ -5953,11 +5953,11 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x30
+  jump_target: 0x80028
 
 ----- EX/MEM Register -----
-alu_result: 0x1
+alu_result: 0x5
 write_data: 0x0
 write_reg: 1
 pc: 0x0
@@ -5968,9 +5968,9 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x18
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x40014
 
 ----- MEM/WB Register -----
 read_data: 0x0
@@ -6018,42 +6018,42 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
+instruction: 0xac000000
 pc: 0xc
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 4
-rs: 5
-rt: 5
+opcode: 12
+rs: 0
+rt: 3
 rd: 0
 shamt: 0
-funct: 8
-imm: 0x8
+funct: 2
+imm: 0x2
 pc: 0x8
 Control Signals:
-  ALU_src: 0
+  ALU_src: 1
   reg_dest: 0
-  ALU_op: 1
+  ALU_op: 3
   shift: 0
   mem_read: 0
   mem_write: 0
-  reg_write: 0
+  reg_write: 1
   mem_to_reg: 0
 Branch/Jump Control:
-  branch: 1
+  branch: 0
   bne: 0
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x2c
-  jump_target: 0x0
+  branch_target: 0x14
+  jump_target: 0xc0008
 
 ----- EX/MEM Register -----
-alu_result: 0x5
+alu_result: 0xa
 write_data: 0x0
-write_reg: 5
+write_reg: 2
 pc: 0x4
 Control Signals:
   mem_read: 0
@@ -6062,13 +6062,13 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x30
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x80028
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x1
+alu_result: 0x5
 write_reg: 1
 pc: 0x0
 Control Signals:
@@ -6077,7 +6077,7 @@ Control Signals:
 
 CYCLE 64
 R[0]: 0
-R[1]: 1
+R[1]: 5
 R[2]: 0
 R[3]: 0
 R[4]: 0
@@ -6112,27 +6112,27 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x0
+instruction: 0xac000000
+pc: 0x10
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 0
+opcode: 43
 rs: 0
 rt: 0
 rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x0
+pc: 0xc
 Control Signals:
-  ALU_src: 0
+  ALU_src: 1
   reg_dest: 0
   ALU_op: 0
   shift: 0
   mem_read: 0
-  mem_write: 0
+  mem_write: 1
   reg_write: 0
   mem_to_reg: 0
 Branch/Jump Control:
@@ -6141,29 +6141,29 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x10
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
-write_data: 0x5
-write_reg: 5
+write_data: 0x0
+write_reg: 3
 pc: 0x8
 Control Signals:
   mem_read: 0
   mem_write: 0
-  reg_write: 0
+  reg_write: 1
   mem_to_reg: 0
 Branch Results:
-  branch_taken: 1
-  branch_target: 0x2c
+  branch_taken: 0
+  branch_target: 0x14
   jump: 0
-  jump_target: 0x0
+  jump_target: 0xc0008
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x5
-write_reg: 5
+alu_result: 0xa
+write_reg: 2
 pc: 0x4
 Control Signals:
   reg_write: 1
@@ -6171,11 +6171,11 @@ Control Signals:
 
 CYCLE 65
 R[0]: 0
-R[1]: 1
-R[2]: 0
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6206,28 +6206,28 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20420002
-pc: 0x2c
+instruction: 0xac000000
+pc: 0x14
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 0
+opcode: 43
 rs: 0
 rt: 0
 rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x0
+pc: 0x10
 Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch/Jump Control:
   branch: 0
@@ -6235,41 +6235,41 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x14
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x0
+pc: 0xc
 Control Signals:
   mem_read: 0
-  mem_write: 0
+  mem_write: 1
   reg_write: 0
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x10
   jump: 0
   jump_target: 0x0
 
 ----- MEM/WB Register -----
 read_data: 0x0
 alu_result: 0x0
-write_reg: 5
+write_reg: 3
 pc: 0x8
 Control Signals:
-  reg_write: 0
+  reg_write: 1
   mem_to_reg: 0
 
 CYCLE 66
 R[0]: 0
-R[1]: 1
-R[2]: 0
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6300,28 +6300,28 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20420002
-pc: 0x30
+instruction: 0x8c040000
+pc: 0x18
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 8
-rs: 2
-rt: 2
+opcode: 43
+rs: 0
+rt: 0
 rd: 0
 shamt: 0
-funct: 2
-imm: 0x2
-pc: 0x2c
+funct: 0
+imm: 0x0
+pc: 0x14
 Control Signals:
   ALU_src: 1
   reg_dest: 0
-  ALU_op: 3
+  ALU_op: 0
   shift: 0
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch/Jump Control:
   branch: 0
@@ -6329,22 +6329,22 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x18
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x0
+pc: 0x10
 Control Signals:
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x14
   jump: 0
   jump_target: 0x0
 
@@ -6352,18 +6352,18 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
-pc: 0x0
+pc: 0xc
 Control Signals:
   reg_write: 0
   mem_to_reg: 0
 
 CYCLE 67
 R[0]: 0
-R[1]: 1
-R[2]: 0
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6394,51 +6394,51 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x20420002
-pc: 0x34
+instruction: 0x8c050000
+pc: 0x1c
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 8
-rs: 2
-rt: 2
+opcode: 35
+rs: 0
+rt: 4
 rd: 0
 shamt: 0
-funct: 2
-imm: 0x2
-pc: 0x30
+funct: 0
+imm: 0x0
+pc: 0x18
 Control Signals:
   ALU_src: 1
   reg_dest: 0
-  ALU_op: 3
+  ALU_op: 0
   shift: 0
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
   reg_write: 1
-  mem_to_reg: 0
+  mem_to_reg: 1
 Branch/Jump Control:
   branch: 0
   bne: 0
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x1c
+  jump_target: 0x100000
 
 ----- EX/MEM Register -----
-alu_result: 0x2
+alu_result: 0x0
 write_data: 0x0
-write_reg: 2
-pc: 0x2c
+write_reg: 0
+pc: 0x14
 Control Signals:
   mem_read: 0
-  mem_write: 0
-  reg_write: 1
+  mem_write: 1
+  reg_write: 0
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x18
   jump: 0
   jump_target: 0x0
 
@@ -6446,18 +6446,18 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
-pc: 0x0
+pc: 0x10
 Control Signals:
-  reg_write: 1
+  reg_write: 0
   mem_to_reg: 0
 
 CYCLE 68
 R[0]: 0
-R[1]: 1
-R[2]: 0
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6488,20 +6488,302 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x14450004
-pc: 0x38
+instruction: 0x8c060000
+pc: 0x20
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 8
-rs: 2
-rt: 2
+opcode: 35
+rs: 0
+rt: 5
 rd: 0
 shamt: 0
-funct: 2
-imm: 0x2
-pc: 0x34
+funct: 0
+imm: 0x0
+pc: 0x1c
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x20
+  jump_target: 0x140000
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 4
+pc: 0x18
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x1c
+  jump: 0
+  jump_target: 0x100000
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x14
+Control Signals:
+  reg_write: 0
+  mem_to_reg: 0
+
+CYCLE 69
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 0
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x8c070000
+pc: 0x24
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 35
+rs: 0
+rt: 6
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x20
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x24
+  jump_target: 0x180000
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 5
+pc: 0x1c
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x20
+  jump: 0
+  jump_target: 0x140000
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 4
+pc: 0x18
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+
+CYCLE 70
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 0
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x3c080023
+pc: 0x28
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 35
+rs: 0
+rt: 7
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x24
+Control Signals:
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 0
+  shift: 0
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x28
+  jump_target: 0x1c0000
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 6
+pc: 0x20
+Control Signals:
+  mem_read: 1
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 1
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x24
+  jump: 0
+  jump_target: 0x180000
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 5
+pc: 0x1c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 1
+
+CYCLE 71
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 0
+R[9]: 0
+R[10]: 0
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x34090002
+pc: 0x2c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 15
+rs: 0
+rt: 8
+rd: 0
+shamt: 0
+funct: 35
+imm: 0x23
+pc: 0x28
 Control Signals:
   ALU_src: 1
   reg_dest: 0
@@ -6517,323 +6799,41 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x4
-write_data: 0x2
-write_reg: 2
-pc: 0x30
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x2
-write_reg: 2
-pc: 0x2c
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-
-CYCLE 69
-R[0]: 0
-R[1]: 1
-R[2]: 2
-R[3]: 0
-R[4]: 0
-R[5]: 5
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x0
-pc: 0x3c
-
------ ID/EX Register -----
-read_data_1: 0x2
-read_data_2: 0x5
-opcode: 5
-rs: 2
-rt: 5
-rd: 0
-shamt: 0
-funct: 4
-imm: 0x4
-pc: 0x38
-Control Signals:
-  ALU_src: 0
-  reg_dest: 0
-  ALU_op: 1
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 0
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 1
-  bne: 1
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x4c
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x6
-write_data: 0x4
-write_reg: 2
-pc: 0x34
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 0
-  branch_target: 0x0
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x4
-write_reg: 2
-pc: 0x30
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-
-CYCLE 70
-R[0]: 0
-R[1]: 1
-R[2]: 4
-R[3]: 0
-R[4]: 0
-R[5]: 5
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x0
-pc: 0x0
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 0
-rs: 0
-rt: 0
-rd: 0
-shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
-Control Signals:
-  ALU_src: 0
-  reg_dest: 0
-  ALU_op: 0
-  shift: 0
-  mem_read: 0
-  mem_write: 0
-  reg_write: 0
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
-
------ EX/MEM Register -----
-alu_result: 0x1
-write_data: 0x5
-write_reg: 5
-pc: 0x38
-Control Signals:
-  mem_read: 0
-  mem_write: 0
-  reg_write: 0
-  mem_to_reg: 0
-Branch Results:
-  branch_taken: 1
-  branch_target: 0x4c
-  jump: 0
-  jump_target: 0x0
-
------ MEM/WB Register -----
-read_data: 0x0
-alu_result: 0x6
-write_reg: 2
-pc: 0x34
-Control Signals:
-  reg_write: 1
-  mem_to_reg: 0
-
-CYCLE 71
-R[0]: 0
-R[1]: 1
-R[2]: 6
-R[3]: 0
-R[4]: 0
-R[5]: 5
-R[6]: 0
-R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
-R[14]: 0
-R[15]: 0
-R[16]: 0
-R[17]: 0
-R[18]: 0
-R[19]: 0
-R[20]: 0
-R[21]: 0
-R[22]: 0
-R[23]: 0
-R[24]: 0
-R[25]: 0
-R[26]: 0
-R[27]: 0
-R[28]: 0
-R[29]: 0
-R[30]: 0
-R[31]: 0
-
-============ PIPELINE REGISTERS STATE ============
-
------ IF/ID Register -----
-instruction: 0x0
-pc: 0x0
-
------ ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
-opcode: 0
-rs: 0
-rt: 0
-rd: 0
-shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
-Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
-  mem_read: 0
-  mem_write: 0
-  reg_write: 1
-  mem_to_reg: 0
-Branch/Jump Control:
-  branch: 0
-  bne: 0
-  jump: 0
-  jump_reg: 0
-  link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0xb8
+  jump_target: 0x20008c
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 7
+pc: 0x24
 Control Signals:
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
-  reg_write: 0
-  mem_to_reg: 0
+  reg_write: 1
+  mem_to_reg: 1
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x28
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x1c0000
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x1
-write_reg: 5
-pc: 0x38
+alu_result: 0x0
+write_reg: 6
+pc: 0x20
 Control Signals:
-  reg_write: 0
-  mem_to_reg: 0
+  reg_write: 1
+  mem_to_reg: 1
 
 CYCLE 72
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6864,25 +6864,25 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x0
+instruction: 0x280a0001
+pc: 0x30
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 0
+opcode: 13
 rs: 0
-rt: 0
+rt: 9
 rd: 0
 shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
+funct: 2
+imm: 0x2
+pc: 0x2c
 Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 3
+  shift: 0
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -6893,14 +6893,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x38
+  jump_target: 0x240008
 
 ----- EX/MEM Register -----
-alu_result: 0x0
+alu_result: 0x230000
 write_data: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 8
+pc: 0x28
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -6908,26 +6908,26 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0xb8
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x20008c
 
 ----- MEM/WB Register -----
 read_data: 0x0
 alu_result: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 7
+pc: 0x24
 Control Signals:
-  reg_write: 0
-  mem_to_reg: 0
+  reg_write: 1
+  mem_to_reg: 1
 
 CYCLE 73
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
@@ -6958,25 +6958,25 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x0
+instruction: 0x2c0b0001
+pc: 0x34
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 0
+opcode: 10
 rs: 0
-rt: 0
+rt: 10
 rd: 0
 shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
+funct: 1
+imm: 0x1
+pc: 0x30
 Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 3
+  shift: 0
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -6987,14 +6987,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x38
+  jump_target: 0x280004
 
 ----- EX/MEM Register -----
-alu_result: 0x0
+alu_result: 0x2
 write_data: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 9
+pc: 0x2c
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -7002,29 +7002,29 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x38
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x240008
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0x230000
+write_reg: 8
+pc: 0x28
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 74
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
+R[8]: 2293760
 R[9]: 0
 R[10]: 0
 R[11]: 0
@@ -7052,25 +7052,25 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x0
+instruction: 0x226020
+pc: 0x38
 
 ----- ID/EX Register -----
 read_data_1: 0x0
 read_data_2: 0x0
-opcode: 0
+opcode: 11
 rs: 0
-rt: 0
+rt: 11
 rd: 0
 shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
+funct: 1
+imm: 0x1
+pc: 0x34
 Control Signals:
-  ALU_src: 0
-  reg_dest: 1
-  ALU_op: 2
-  shift: 1
+  ALU_src: 1
+  reg_dest: 0
+  ALU_op: 3
+  shift: 0
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -7081,14 +7081,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x3c
+  jump_target: 0x2c0004
 
 ----- EX/MEM Register -----
-alu_result: 0x0
+alu_result: 0x1
 write_data: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 10
+pc: 0x30
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -7096,30 +7096,30 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x38
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x280004
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0x2
+write_reg: 9
+pc: 0x2c
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 75
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
+R[8]: 2293760
+R[9]: 2
 R[10]: 0
 R[11]: 0
 R[12]: 0
@@ -7146,25 +7146,25 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x0
+instruction: 0x226821
+pc: 0x3c
 
 ----- ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
+read_data_1: 0x5
+read_data_2: 0xa
 opcode: 0
-rs: 0
-rt: 0
-rd: 0
+rs: 1
+rt: 2
+rd: 12
 shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
+funct: 32
+imm: 0x6020
+pc: 0x38
 Control Signals:
   ALU_src: 0
   reg_dest: 1
   ALU_op: 2
-  shift: 1
+  shift: 0
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -7175,14 +7175,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x180bc
+  jump_target: 0x898080
 
 ----- EX/MEM Register -----
-alu_result: 0x0
+alu_result: 0x1
 write_data: 0x0
-write_reg: 0
-pc: 0x0
+write_reg: 11
+pc: 0x34
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -7190,31 +7190,31 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x3c
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x2c0004
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0x1
+write_reg: 10
+pc: 0x30
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 76
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -7244,21 +7244,21 @@ instruction: 0x0
 pc: 0x0
 
 ----- ID/EX Register -----
-read_data_1: 0x0
-read_data_2: 0x0
+read_data_1: 0x5
+read_data_2: 0xa
 opcode: 0
-rs: 0
-rt: 0
-rd: 0
+rs: 1
+rt: 2
+rd: 13
 shamt: 0
-funct: 0
-imm: 0x0
-pc: 0x0
+funct: 33
+imm: 0x6821
+pc: 0x3c
 Control Signals:
   ALU_src: 0
   reg_dest: 1
   ALU_op: 2
-  shift: 1
+  shift: 0
   mem_read: 0
   mem_write: 0
   reg_write: 1
@@ -7269,14 +7269,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
-  jump_target: 0x0
+  branch_target: 0x1a0c4
+  jump_target: 0x89a084
 
 ----- EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0xf
+write_data: 0xa
+write_reg: 12
+pc: 0x38
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -7284,32 +7284,32 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x180bc
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x898080
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0x1
+write_reg: 11
+pc: 0x34
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 77
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
 R[12]: 0
 R[13]: 0
 R[14]: 0
@@ -7363,14 +7363,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
-alu_result: 0x0
-write_data: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0xf
+write_data: 0xa
+write_reg: 13
+pc: 0x3c
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -7378,33 +7378,33 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x1a0c4
   jump: 0
-  jump_target: 0x0
+  jump_target: 0x89a084
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0xf
+write_reg: 12
+pc: 0x38
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 78
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
 R[13]: 0
 R[14]: 0
 R[15]: 0
@@ -7457,7 +7457,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7472,34 +7472,34 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
 ----- MEM/WB Register -----
 read_data: 0x0
-alu_result: 0x0
-write_reg: 0
-pc: 0x0
+alu_result: 0xf
+write_reg: 13
+pc: 0x3c
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 79
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -7551,7 +7551,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7566,7 +7566,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -7581,19 +7581,19 @@ Control Signals:
 
 CYCLE 80
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -7645,7 +7645,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7660,7 +7660,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -7675,19 +7675,19 @@ Control Signals:
 
 CYCLE 81
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -7739,7 +7739,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7754,7 +7754,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -7769,19 +7769,19 @@ Control Signals:
 
 CYCLE 82
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -7833,7 +7833,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7848,7 +7848,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -7863,19 +7863,19 @@ Control Signals:
 
 CYCLE 83
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -7927,7 +7927,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -7942,7 +7942,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -7957,19 +7957,19 @@ Control Signals:
 
 CYCLE 84
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8021,7 +8021,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8036,7 +8036,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8051,19 +8051,19 @@ Control Signals:
 
 CYCLE 85
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8115,7 +8115,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8130,7 +8130,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8145,19 +8145,19 @@ Control Signals:
 
 CYCLE 86
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8209,7 +8209,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8224,7 +8224,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8239,19 +8239,19 @@ Control Signals:
 
 CYCLE 87
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8303,7 +8303,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8318,7 +8318,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8333,19 +8333,19 @@ Control Signals:
 
 CYCLE 88
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8397,7 +8397,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8412,7 +8412,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8427,19 +8427,19 @@ Control Signals:
 
 CYCLE 89
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8491,7 +8491,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8506,7 +8506,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8521,19 +8521,19 @@ Control Signals:
 
 CYCLE 90
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8585,7 +8585,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8600,7 +8600,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8615,19 +8615,19 @@ Control Signals:
 
 CYCLE 91
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8679,7 +8679,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8694,7 +8694,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8709,19 +8709,19 @@ Control Signals:
 
 CYCLE 92
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8773,7 +8773,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8788,7 +8788,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8803,19 +8803,19 @@ Control Signals:
 
 CYCLE 93
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8867,7 +8867,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8882,7 +8882,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8897,19 +8897,19 @@ Control Signals:
 
 CYCLE 94
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -8961,7 +8961,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -8976,7 +8976,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -8991,19 +8991,19 @@ Control Signals:
 
 CYCLE 95
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9055,7 +9055,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9070,7 +9070,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9085,19 +9085,19 @@ Control Signals:
 
 CYCLE 96
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9149,7 +9149,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9164,7 +9164,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9179,19 +9179,19 @@ Control Signals:
 
 CYCLE 97
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9243,7 +9243,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9258,7 +9258,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9273,19 +9273,19 @@ Control Signals:
 
 CYCLE 98
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9337,7 +9337,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9352,7 +9352,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9367,19 +9367,19 @@ Control Signals:
 
 CYCLE 99
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9431,7 +9431,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9446,7 +9446,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9461,19 +9461,19 @@ Control Signals:
 
 CYCLE 100
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9525,7 +9525,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9540,7 +9540,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9555,19 +9555,19 @@ Control Signals:
 
 CYCLE 101
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9619,7 +9619,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9634,7 +9634,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9649,19 +9649,19 @@ Control Signals:
 
 CYCLE 102
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9713,7 +9713,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9728,7 +9728,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9743,19 +9743,19 @@ Control Signals:
 
 CYCLE 103
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9807,7 +9807,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9822,7 +9822,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9837,19 +9837,19 @@ Control Signals:
 
 CYCLE 104
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9901,7 +9901,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -9916,7 +9916,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -9931,19 +9931,19 @@ Control Signals:
 
 CYCLE 105
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -9995,7 +9995,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10010,7 +10010,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10025,19 +10025,19 @@ Control Signals:
 
 CYCLE 106
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10089,7 +10089,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10104,7 +10104,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10119,19 +10119,19 @@ Control Signals:
 
 CYCLE 107
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10183,7 +10183,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10198,7 +10198,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10213,19 +10213,19 @@ Control Signals:
 
 CYCLE 108
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10277,7 +10277,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10292,7 +10292,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10307,19 +10307,19 @@ Control Signals:
 
 CYCLE 109
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10371,7 +10371,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10386,7 +10386,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10401,19 +10401,19 @@ Control Signals:
 
 CYCLE 110
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10465,7 +10465,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10480,7 +10480,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10495,19 +10495,19 @@ Control Signals:
 
 CYCLE 111
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10559,7 +10559,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10574,7 +10574,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10589,19 +10589,19 @@ Control Signals:
 
 CYCLE 112
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10653,7 +10653,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10668,7 +10668,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10683,19 +10683,19 @@ Control Signals:
 
 CYCLE 113
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10747,7 +10747,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10762,7 +10762,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10777,19 +10777,19 @@ Control Signals:
 
 CYCLE 114
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10841,7 +10841,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10856,7 +10856,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10871,19 +10871,19 @@ Control Signals:
 
 CYCLE 115
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -10935,7 +10935,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -10950,7 +10950,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -10965,19 +10965,19 @@ Control Signals:
 
 CYCLE 116
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11029,7 +11029,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11044,7 +11044,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11059,19 +11059,19 @@ Control Signals:
 
 CYCLE 117
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11123,7 +11123,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11138,7 +11138,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11153,19 +11153,19 @@ Control Signals:
 
 CYCLE 118
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11217,7 +11217,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11232,7 +11232,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11247,19 +11247,19 @@ Control Signals:
 
 CYCLE 119
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11311,7 +11311,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11326,7 +11326,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11341,19 +11341,19 @@ Control Signals:
 
 CYCLE 120
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11405,7 +11405,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11420,7 +11420,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11435,19 +11435,19 @@ Control Signals:
 
 CYCLE 121
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11499,7 +11499,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11514,7 +11514,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11529,19 +11529,19 @@ Control Signals:
 
 CYCLE 122
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11593,7 +11593,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11608,7 +11608,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11623,19 +11623,19 @@ Control Signals:
 
 CYCLE 123
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11687,7 +11687,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11702,7 +11702,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11717,19 +11717,19 @@ Control Signals:
 
 CYCLE 124
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11781,7 +11781,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11796,7 +11796,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11811,19 +11811,19 @@ Control Signals:
 
 CYCLE 125
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11875,7 +11875,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11890,7 +11890,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11905,19 +11905,19 @@ Control Signals:
 
 CYCLE 126
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -11969,7 +11969,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -11984,7 +11984,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -11999,19 +11999,19 @@ Control Signals:
 
 CYCLE 127
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12063,7 +12063,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12078,7 +12078,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12093,19 +12093,19 @@ Control Signals:
 
 CYCLE 128
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12157,7 +12157,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12172,7 +12172,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12187,19 +12187,19 @@ Control Signals:
 
 CYCLE 129
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12251,7 +12251,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12266,7 +12266,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12281,19 +12281,19 @@ Control Signals:
 
 CYCLE 130
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12345,7 +12345,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12360,7 +12360,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12375,19 +12375,19 @@ Control Signals:
 
 CYCLE 131
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12411,7 +12411,7 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x0
-pc: 0x4c
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12439,7 +12439,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12454,7 +12454,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12469,19 +12469,19 @@ Control Signals:
 
 CYCLE 132
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12505,7 +12505,7 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x0
-pc: 0x50
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12517,7 +12517,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x4c
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -12533,7 +12533,7 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
@@ -12548,7 +12548,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12563,19 +12563,19 @@ Control Signals:
 
 CYCLE 133
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12599,7 +12599,7 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x0
-pc: 0x54
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12611,7 +12611,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x50
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -12627,14 +12627,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x4c
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -12642,7 +12642,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12657,19 +12657,19 @@ Control Signals:
 
 CYCLE 134
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12693,7 +12693,7 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x0
-pc: 0x58
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12705,7 +12705,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x54
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -12721,14 +12721,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x50
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -12736,7 +12736,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12744,26 +12744,26 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
-pc: 0x4c
+pc: 0x0
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 135
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12787,7 +12787,7 @@ R[31]: 0
 
 ----- IF/ID Register -----
 instruction: 0x0
-pc: 0x5c
+pc: 0x0
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12799,7 +12799,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x58
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -12815,14 +12815,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x54
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -12830,7 +12830,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12838,26 +12838,26 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
-pc: 0x50
+pc: 0x0
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 136
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12880,8 +12880,8 @@ R[31]: 0
 ============ PIPELINE REGISTERS STATE ============
 
 ----- IF/ID Register -----
-instruction: 0x0
-pc: 0x60
+instruction: 0x227024
+pc: 0x40
 
 ----- ID/EX Register -----
 read_data_1: 0x0
@@ -12893,7 +12893,7 @@ rd: 0
 shamt: 0
 funct: 0
 imm: 0x0
-pc: 0x5c
+pc: 0x0
 Control Signals:
   ALU_src: 0
   reg_dest: 1
@@ -12909,14 +12909,14 @@ Branch/Jump Control:
   jump: 0
   jump_reg: 0
   link: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump_target: 0x0
 
 ----- EX/MEM Register -----
 alu_result: 0x0
 write_data: 0x0
 write_reg: 0
-pc: 0x58
+pc: 0x0
 Control Signals:
   mem_read: 0
   mem_write: 0
@@ -12924,7 +12924,7 @@ Control Signals:
   mem_to_reg: 0
 Branch Results:
   branch_taken: 0
-  branch_target: 0x0
+  branch_target: 0x4
   jump: 0
   jump_target: 0x0
 
@@ -12932,26 +12932,26 @@ Branch Results:
 read_data: 0x0
 alu_result: 0x0
 write_reg: 0
-pc: 0x54
+pc: 0x0
 Control Signals:
   reg_write: 1
   mem_to_reg: 0
 
 CYCLE 137
 R[0]: 0
-R[1]: 1
-R[2]: 6
+R[1]: 5
+R[2]: 10
 R[3]: 0
 R[4]: 0
-R[5]: 5
+R[5]: 0
 R[6]: 0
 R[7]: 0
-R[8]: 0
-R[9]: 0
-R[10]: 0
-R[11]: 0
-R[12]: 0
-R[13]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
 R[14]: 0
 R[15]: 0
 R[16]: 0
@@ -12971,4 +12971,1508 @@ R[29]: 0
 R[30]: 0
 R[31]: 0
 
-Completed execution in 69 nanoseconds.
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x227827
+pc: 0x44
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 14
+shamt: 0
+funct: 36
+imm: 0x7024
+pc: 0x40
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x1c0d4
+  jump_target: 0x89c090
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x0
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x4
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x0
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 138
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x228025
+pc: 0x48
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 15
+shamt: 0
+funct: 39
+imm: 0x7827
+pc: 0x44
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x1e0e4
+  jump_target: 0x89e09c
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0xa
+write_reg: 14
+pc: 0x40
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x1c0d4
+  jump: 0
+  jump_target: 0x89c090
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x0
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 139
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x22882a
+pc: 0x4c
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 16
+shamt: 0
+funct: 37
+imm: 0xffff8025
+pc: 0x48
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffe00e0
+  jump_target: 0x8a0094
+
+----- EX/MEM Register -----
+alu_result: 0xfffffff0
+write_data: 0xa
+write_reg: 15
+pc: 0x44
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x1e0e4
+  jump: 0
+  jump_target: 0x89e09c
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 14
+pc: 0x40
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 140
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x41902b
+pc: 0x50
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 17
+shamt: 0
+funct: 42
+imm: 0xffff882a
+pc: 0x4c
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffe20f8
+  jump_target: 0x8a20a8
+
+----- EX/MEM Register -----
+alu_result: 0xf
+write_data: 0xa
+write_reg: 16
+pc: 0x48
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffe00e0
+  jump: 0
+  jump_target: 0x8a0094
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0xfffffff0
+write_reg: 15
+pc: 0x44
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 141
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x19880
+pc: 0x54
+
+----- ID/EX Register -----
+read_data_1: 0xa
+read_data_2: 0x5
+opcode: 0
+rs: 2
+rt: 1
+rd: 18
+shamt: 0
+funct: 43
+imm: 0xffff902b
+pc: 0x50
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffe4100
+  jump_target: 0x10640ac
+
+----- EX/MEM Register -----
+alu_result: 0x1
+write_data: 0xa
+write_reg: 17
+pc: 0x4c
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffe20f8
+  jump: 0
+  jump_target: 0x8a20a8
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0xf
+write_reg: 16
+pc: 0x48
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 142
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x2a042
+pc: 0x58
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x5
+opcode: 0
+rs: 0
+rt: 1
+rd: 19
+shamt: 2
+funct: 0
+imm: 0xffff9880
+pc: 0x54
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffe6258
+  jump_target: 0x66200
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x5
+write_reg: 18
+pc: 0x50
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffe4100
+  jump: 0
+  jump_target: 0x10640ac
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x1
+write_reg: 17
+pc: 0x4c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 143
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x22a822
+pc: 0x5c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0xa
+opcode: 0
+rs: 0
+rt: 2
+rd: 20
+shamt: 1
+funct: 2
+imm: 0xffffa042
+pc: 0x58
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffe8164
+  jump_target: 0xa8108
+
+----- EX/MEM Register -----
+alu_result: 0x14
+write_data: 0x5
+write_reg: 19
+pc: 0x54
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffe6258
+  jump: 0
+  jump_target: 0x66200
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 18
+pc: 0x50
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 144
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x22b023
+pc: 0x60
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 21
+shamt: 0
+funct: 34
+imm: 0xffffa822
+pc: 0x5c
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffea0e8
+  jump_target: 0x8aa088
+
+----- EX/MEM Register -----
+alu_result: 0x5
+write_data: 0xa
+write_reg: 20
+pc: 0x58
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffe8164
+  jump: 0
+  jump_target: 0xa8108
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x14
+write_reg: 19
+pc: 0x54
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 145
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x64
+
+----- ID/EX Register -----
+read_data_1: 0x5
+read_data_2: 0xa
+opcode: 0
+rs: 1
+rt: 2
+rd: 22
+shamt: 0
+funct: 35
+imm: 0xffffb023
+pc: 0x60
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 0
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0xfffec0f0
+  jump_target: 0x8ac08c
+
+----- EX/MEM Register -----
+alu_result: 0xfffffffb
+write_data: 0xa
+write_reg: 21
+pc: 0x5c
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffea0e8
+  jump: 0
+  jump_target: 0x8aa088
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x5
+write_reg: 20
+pc: 0x58
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 146
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x68
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x64
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x68
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0xfffffffb
+write_data: 0xa
+write_reg: 22
+pc: 0x60
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0xfffec0f0
+  jump: 0
+  jump_target: 0x8ac08c
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0xfffffffb
+write_reg: 21
+pc: 0x5c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 147
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x6c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x68
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x6c
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x64
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x68
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0xfffffffb
+write_reg: 22
+pc: 0x60
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 148
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x70
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x6c
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x70
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x68
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x6c
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x64
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 149
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x74
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x70
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x74
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x6c
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x70
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x68
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 150
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x78
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x74
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x78
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x70
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x74
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x6c
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 151
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x7c
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x78
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x7c
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x74
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x78
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x70
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 152
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+============ PIPELINE REGISTERS STATE ============
+
+----- IF/ID Register -----
+instruction: 0x0
+pc: 0x0
+
+----- ID/EX Register -----
+read_data_1: 0x0
+read_data_2: 0x0
+opcode: 0
+rs: 0
+rt: 0
+rd: 0
+shamt: 0
+funct: 0
+imm: 0x0
+pc: 0x7c
+Control Signals:
+  ALU_src: 0
+  reg_dest: 1
+  ALU_op: 2
+  shift: 1
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch/Jump Control:
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  branch_target: 0x80
+  jump_target: 0x0
+
+----- EX/MEM Register -----
+alu_result: 0x0
+write_data: 0x0
+write_reg: 0
+pc: 0x78
+Control Signals:
+  mem_read: 0
+  mem_write: 0
+  reg_write: 1
+  mem_to_reg: 0
+Branch Results:
+  branch_taken: 0
+  branch_target: 0x7c
+  jump: 0
+  jump_target: 0x0
+
+----- MEM/WB Register -----
+read_data: 0x0
+alu_result: 0x0
+write_reg: 0
+pc: 0x74
+Control Signals:
+  reg_write: 1
+  mem_to_reg: 0
+
+CYCLE 153
+R[0]: 0
+R[1]: 5
+R[2]: 10
+R[3]: 0
+R[4]: 0
+R[5]: 0
+R[6]: 0
+R[7]: 0
+R[8]: 2293760
+R[9]: 2
+R[10]: 1
+R[11]: 1
+R[12]: 15
+R[13]: 15
+R[14]: 0
+R[15]: -16
+R[16]: 15
+R[17]: 1
+R[18]: 0
+R[19]: 20
+R[20]: 5
+R[21]: -5
+R[22]: -5
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+
+Completed execution in 77 nanoseconds.
