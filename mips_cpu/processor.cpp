@@ -268,15 +268,6 @@ void Processor::pipelined_processor_advance() {
         }
         read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
     }
- 
-
-    bool stall = false;
-    // Check for hazards
-    if (ex_mem.mem_read && ex_mem.write_reg != 0) {
-        if (id_ex.rs == ex_mem.write_reg || id_ex.rt == ex_mem.write_reg) {
-            stall = true;
-        }
-    }
 
     uint32_t write_data = 0;
     write_data = ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
@@ -289,13 +280,6 @@ void Processor::pipelined_processor_advance() {
     mem_wb.write_reg = ex_mem.write_reg;
     mem_wb.reg_write = ex_mem.reg_write;
     mem_wb.pc = ex_mem.pc;  
-    
-
-    
-    if (stall){
-        memset(&ex_mem, 0, sizeof(EX_MEM_reg));
-        return;
-    }
 
     // EX Stage
     uint32_t forward_data1 = id_ex.read_data_1;
@@ -361,6 +345,14 @@ void Processor::pipelined_processor_advance() {
     ex_mem.link = id_ex.link;
 
     if (!flush) {
+        //Decode
+        int rs = (if_id.instruction >> 21) & 0x1f;
+        int rt = (if_id.instruction >> 16) & 0x1f;
+        if (id_ex.mem_read && ex_mem.write_reg != 0 && (id_ex.rt == rs || id_ex.rt == rt)){
+            memset(&id_ex, 0, sizeof(ID_EX_reg));
+            return;
+        }
+
         // ID/EX ← IF/ID
         control_t control;
         control.decode(if_id.instruction);
