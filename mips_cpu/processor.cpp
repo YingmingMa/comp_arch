@@ -71,20 +71,20 @@ void Processor::single_cycle_processor_advance() {
     uint32_t read_data_1 = 0;
     uint32_t read_data_2 = 0;
 
-//     // Print instruction fields
-// std::cout << "\n===== Instruction Fields =====\n";
-// std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
-// std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
-// std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
-// std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
-// std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
-// std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
-// std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
-// std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
-// std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
-// std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
-// std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
-// std::cout << "=============================\n" << std::dec;
+    // Print instruction fields
+    std::cout << "\n===== Instruction Fields =====\n";
+    std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
+    std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
+    std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
+    std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
+    std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
+    std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
+    std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
+    std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
+    std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
+    std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
+    std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
+    std::cout << "=============================\n" << std::dec;
     
     // Read from reg file
     regfile.access(rs, rt, read_data_1, read_data_2, 0, 0, 0);
@@ -104,9 +104,9 @@ void Processor::single_cycle_processor_advance() {
     uint32_t alu_zero = 0;
 
     uint32_t alu_result = alu.execute(operand_1, operand_2, alu_zero);
-    DEBUG(std::cout << "EX: imm = " << std::hex << imm <<::dec << "\n");
-    DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
-    DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
+    // DEBUG(std::cout << "EX: imm = " << std::hex << imm <<::dec << "\n");
+    // DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
+    // DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
 
     
     
@@ -326,9 +326,9 @@ void Processor::pipelined_processor_advance() {
     uint32_t alu_zero = 0;
 
     uint32_t alu_result = alu.execute(operand_1, operand_2, alu_zero);
-    DEBUG(std::cout << "EX: imm = " << std::hex << id_ex.imm <<::dec << "\n");
-    DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
-    DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
+    // DEBUG(std::cout << "EX: imm = " << std::hex << id_ex.imm <<::dec << "\n");
+    // DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
+    // DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
 
     bool actual_branch_taken = (id_ex.branch && !id_ex.bne && alu_zero) || (id_ex.bne && !alu_zero);
 
@@ -366,7 +366,7 @@ void Processor::pipelined_processor_advance() {
     
     // decode
     control.decode(if_id.instruction);
-    DEBUG(control.print());
+    // DEBUG(control.print());
 
     // stall detection
     int rs = (if_id.instruction >> 21) & 0x1f;
@@ -411,39 +411,91 @@ void Processor::pipelined_processor_advance() {
         // todo may need reg file forwarding explicitly
         regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, 0, 0);
     } else { //inserting no ops for the following steps for this function
-        id_ex.ALU_src = 0;
-        id_ex.reg_dest = 0;
-        id_ex.ALU_op = 0;
-        id_ex.shift = 0;
-        id_ex.mem_read = 0;
-        id_ex.mem_write = 0;
-        id_ex.reg_write = 0;
-        id_ex.mem_to_reg = 0;
-        id_ex.branch = 0;
-        id_ex.bne = 0;
-        id_ex.jump = 0;
-        id_ex.jump_reg = 0;
-        id_ex.link = 0;
-        id_ex.halfword = 0;
-        id_ex.byte = 0;
+        memset(&id_ex, 0, sizeof(ID_EX_reg));
     }
 
     // fetch
-    uint32_t instruction;
-    memory->access(regfile.pc, instruction, 0, 1, 0);
-    // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
-
     if (!stall){
-        // increment pc
-        if_id.pc = regfile.pc + 4;
+        uint32_t instruction;
+    
+        if(!memory->access(regfile.pc, instruction, 0, 1, 0)){ //acount for memory stall time
+            std::cout << "instruction: 0x \n" ;
+            memset(&if_id, 0, sizeof(IF_ID_reg));
+        } else {
+            // std::cout <<  std::hex << regfile.pc << " Instruction: 0x" << std::hex << instruction << std::dec << "\n";
+            // increment pc
+            if_id.pc = regfile.pc + 4;
 
-        //todo: may need conditiond so that will will stall
-        if_id.instruction = instruction;
+            if_id.instruction = instruction;
+        }
+        
     }
 
     if (flush) {
-        if_id.instruction = 0; 
+        memset(&if_id, 0, sizeof(IF_ID_reg)); 
     }
-        
+    
+        // Debug IF/ID register
+        std::cout << "----- IF/ID Register -----\n";
+        std::cout << "instruction: 0x" << std::hex << if_id.instruction << std::dec << "\n";
+        std::cout << "pc: 0x" << std::hex << if_id.pc << std::dec << "\n\n";
+    
+        // Debug ID/EX register
+        std::cout << "----- ID/EX Register -----\n";
+        std::cout << "read_data_1: 0x" << std::hex << id_ex.read_data_1 << std::dec << "\n";
+        std::cout << "read_data_2: 0x" << std::hex << id_ex.read_data_2 << std::dec << "\n";
+        std::cout << "opcode: " << id_ex.opcode << "\n";
+        std::cout << "rs: " << id_ex.rs << "\n";
+        std::cout << "rt: " << id_ex.rt << "\n";
+        std::cout << "rd: " << id_ex.rd << "\n";
+        std::cout << "shamt: " << id_ex.shamt << "\n";
+        std::cout << "funct: " << id_ex.funct << "\n";
+        std::cout << "imm: 0x" << std::hex << id_ex.imm << std::dec << "\n";
+        std::cout << "addr: 0x" << std::hex << id_ex.addr << std::dec << "\n";
+        std::cout << "pc: 0x" << std::hex << id_ex.pc << std::dec << "\n";
+        std::cout << "Control Signals:\n";
+        std::cout << "  ALU_src: " << id_ex.ALU_src << "\n";
+        std::cout << "  reg_dest: " << id_ex.reg_dest << "\n";
+        std::cout << "  ALU_op: " << (int)id_ex.ALU_op << "\n";
+        std::cout << "  shift: " << id_ex.shift << "\n";
+        std::cout << "  mem_read: " << id_ex.mem_read << "\n";
+        std::cout << "  mem_write: " << id_ex.mem_write << "\n";
+        std::cout << "  halfword: " << id_ex.halfword << "\n";
+        std::cout << "  byte: " << id_ex.byte << "\n";
+        std::cout << "  reg_write: " << id_ex.reg_write << "\n";
+        std::cout << "  mem_to_reg: " << id_ex.mem_to_reg << "\n";
+        std::cout << "  zero_extend: " << id_ex.zero_extend << "\n";
+        std::cout << "  branch: " << id_ex.branch << "\n";
+        std::cout << "  bne: " << id_ex.bne << "\n";
+        std::cout << "  jump: " << id_ex.jump << "\n";
+        std::cout << "  jump_reg: " << id_ex.jump_reg << "\n";
+        std::cout << "  link: " << id_ex.link << "\n\n";
+    
+        // Debug EX/MEM register
+        std::cout << "----- EX/MEM Register -----\n";
+        std::cout << "alu_result: 0x" << std::hex << ex_mem.alu_result << std::dec << "\n";
+        std::cout << "write_data: 0x" << std::hex << ex_mem.write_data << std::dec << "\n";
+        std::cout << "write_reg: " << ex_mem.write_reg << "\n";
+        std::cout << "pc: 0x" << std::hex << ex_mem.pc << std::dec << "\n";
+        std::cout << "Control Signals:\n";
+        std::cout << "  mem_read: " << ex_mem.mem_read << "\n";
+        std::cout << "  mem_write: " << ex_mem.mem_write << "\n";
+        std::cout << "  halfword: " << ex_mem.halfword << "\n";
+        std::cout << "  byte: " << ex_mem.byte << "\n";
+        std::cout << "  reg_write: " << ex_mem.reg_write << "\n";
+        std::cout << "  mem_to_reg: " << ex_mem.mem_to_reg << "\n";
+        std::cout << "Branch Results:\n";
+        std::cout << "  branch_taken: " << ex_mem.branch_taken << "\n";
+        std::cout << "  branch_target: 0x" << std::hex << ex_mem.branch_target << std::dec << "\n";
+        std::cout << "  jump: " << ex_mem.jump << "\n";
+        std::cout << "  jump_target: 0x" << std::hex << ex_mem.jump_target << std::dec << "\n";
+        std::cout << "  link: " << ex_mem.link << "\n\n";
+    
+        // Debug MEM/WB register
+        std::cout << "----- MEM/WB Register -----\n";
+        std::cout << "write_data: 0x" << std::hex << mem_wb.write_data << std::dec << "\n";
+        std::cout << "write_reg: " << mem_wb.write_reg << "\n";
+        std::cout << "reg_write: " << mem_wb.reg_write << "\n";
+        std::cout << "pc: 0x" << std::hex << mem_wb.pc << std::dec << "\n\n";
 }
 
