@@ -42,20 +42,38 @@ void Processor::advance() {
     }
 }
 
+
+
 void Processor::single_cycle_processor_advance() {
     // fetch
     uint32_t instruction;
     memory->access(regfile.pc, instruction, 0, 1, 0);
-    DEBUG(cout << "\nPC: 0x" << std::hex << regfile.pc << std::dec << "\n");
-    std::cout << "IF Stage - PC: 0x" << std::hex << regfile.pc 
-    << " Instruction: 0x" << instruction << std::dec << "\n";
-
     // increment pc
+    std::cout << "PC: 0x" << std::hex << regfile.pc << std::dec << std::endl;
     regfile.pc += 4;
     
     // decode into contol signals
     control.decode(instruction);
     DEBUG(control.print());
+
+
+    std::cout << "Control signals:" << std::endl;
+    std::cout << "  ALU_op: " << control.ALU_op << std::endl;
+    std::cout << "  reg_dest: " << control.reg_dest << std::endl;
+    std::cout << "  ALU_src: " << control.ALU_src << std::endl;
+    std::cout << "  mem_to_reg: " << control.mem_to_reg << std::endl;
+    std::cout << "  reg_write: " << control.reg_write << std::endl;
+    std::cout << "  mem_read: " << control.mem_read << std::endl;
+    std::cout << "  mem_write: " << control.mem_write << std::endl;
+    std::cout << "  branch: " << control.branch << std::endl;
+    std::cout << "  bne: " << control.bne << std::endl;
+    std::cout << "  jump: " << control.jump << std::endl;
+    std::cout << "  jump_reg: " << control.jump_reg << std::endl;
+    std::cout << "  link: " << control.link << std::endl;
+    std::cout << "  shift: " << control.shift << std::endl;
+    std::cout << "  byte: " << control.byte << std::endl;
+    std::cout << "  halfword: " << control.halfword << std::endl;
+    std::cout << "  zero_extend: " << control.zero_extend << std::endl;
 
     // extract rs, rt, rd, imm, funct 
     int opcode = (instruction >> 26) & 0x3f;
@@ -69,22 +87,14 @@ void Processor::single_cycle_processor_advance() {
     // Variables to read data into
     uint32_t read_data_1 = 0;
     uint32_t read_data_2 = 0;
+std::cout << "rs: " << rs << " [R" << rs << "]" << std::endl;
+std::cout << "rt: " << rt << " [R" << rt << "]" << std::endl;
+std::cout << "rd: " << rd << " [R" << rd << "]" << std::endl;
+std::cout << "shamt: " << shamt << std::endl;
+std::cout << "funct: " << funct << " (0x" << std::hex << funct << std::dec << ")" << std::endl;
+std::cout << "immediate: " << std::dec << (int16_t)imm << " (0x" << std::hex << imm << std::dec << ")" << std::endl;
+std::cout << "address: 0x" << std::hex << addr << std::dec << std::endl;
 
-    // Print instruction fields
-// std::cout << "\n===== Instruction Fields =====\n";
-// std::cout << "instruction: 0x" << std::hex << instruction << std::dec << "\n";
-// std::cout << "opcode: " << opcode << " (0x" << std::hex << opcode << ")\n";
-// std::cout << "rs: " << std::dec << rs << " (0x" << std::hex << rs << ")\n";
-// std::cout << "rt: " << std::dec << rt << " (0x" << std::hex << rt << ")\n";
-// std::cout << "rd: " << std::dec << rd << " (0x" << std::hex << rd << ")\n";
-// std::cout << "shamt: " << std::dec << shamt << " (0x" << std::hex << shamt << ")\n";
-// std::cout << "funct: " << std::dec << funct << " (0x" << std::hex << funct << ")\n";
-// std::cout << "immediate: " << std::dec << imm << " (0x" << std::hex << imm << ")\n";
-// std::cout << "jump address: " << std::dec << addr << " (0x" << std::hex << addr << ")\n";
-// std::cout << "read_data_1: " << std::dec << read_data_1 << " (0x" << std::hex << read_data_1 << ")\n";
-// std::cout << "read_data_2: " << std::dec << read_data_2 << " (0x" << std::hex << read_data_2 << ")\n";
-// std::cout << "=============================\n" << std::dec;
-    
     // Read from reg file
     regfile.access(rs, rt, read_data_1, read_data_2, 0, 0, 0);
     
@@ -103,13 +113,6 @@ void Processor::single_cycle_processor_advance() {
     uint32_t alu_zero = 0;
 
     uint32_t alu_result = alu.execute(operand_1, operand_2, alu_zero);
-    DEBUG(std::cout << "EX: imm = " << std::hex << imm <<::dec << "\n");
-    DEBUG(std::cout << "EX: ALU result = " << std::hex << alu_result << std::dec << "\n");
-    DEBUG(std::cout << "EX: ALU op = " << std::hex << operand_1 << " "<< operand_2<<::dec << "\n");
-
-    
-    
-    
     uint32_t read_data_mem = 0;
     uint32_t write_data_mem = 0;
 
@@ -135,6 +138,8 @@ void Processor::single_cycle_processor_advance() {
     regfile.pc += (control.branch && !control.bne && alu_zero) || (control.bne && !alu_zero) ? imm << 2 : 0; 
     regfile.pc = control.jump_reg ? read_data_1 : control.jump ? (regfile.pc & 0xf0000000) & (addr << 2): regfile.pc;
 }
+
+
 
 
 
@@ -203,6 +208,7 @@ struct EX_MEM_reg {
     bool jump;
     uint32_t jump_target;
     uint32_t pc;
+    bool link;
 };
 
 struct MEM_WB_reg {
@@ -213,7 +219,9 @@ struct MEM_WB_reg {
     bool reg_write;
     bool mem_to_reg;
     uint32_t pc;
+    bool link;
 };
+
 
 
 void Processor::pipelined_processor_advance() {
@@ -222,84 +230,18 @@ void Processor::pipelined_processor_advance() {
     static EX_MEM_reg ex_mem;
     static MEM_WB_reg mem_wb;
     static uint32_t current_pc = 0;
+
     
     bool flush = false;
     uint32_t new_pc = current_pc + 4;  // Default next PC
 
-        // Print pipeline state
-        std::cout << "\n============ PIPELINE REGISTERS STATE ============\n";
-    
-        // Print IF/ID Register
-        std::cout << "\n----- IF/ID Register -----\n";
-        std::cout << "instruction: 0x" << std::hex << if_id.instruction << std::dec << "\n";
-        std::cout << "pc: 0x" << std::hex << if_id.pc << std::dec << "\n";
-        
-        // Print ID/EX Register
-        std::cout << "\n----- ID/EX Register -----\n";
-        std::cout << "read_data_1: 0x" << std::hex << id_ex.read_data_1 << std::dec << "\n";
-        std::cout << "read_data_2: 0x" << std::hex << id_ex.read_data_2 << std::dec << "\n";
-        std::cout << "opcode: " << id_ex.opcode << "\n";
-        std::cout << "rs: " << id_ex.rs << "\n";
-        std::cout << "rt: " << id_ex.rt << "\n";
-        std::cout << "rd: " << id_ex.rd << "\n";
-        std::cout << "shamt: " << id_ex.shamt << "\n";
-        std::cout << "funct: " << id_ex.funct << "\n";
-        std::cout << "imm: 0x" << std::hex << id_ex.imm << std::dec << "\n";
-        std::cout << "pc: 0x" << std::hex << id_ex.pc << std::dec << "\n";
-        std::cout << "Control Signals:\n";
-        std::cout << "  ALU_src: " << id_ex.ALU_src << "\n";
-        std::cout << "  reg_dest: " << id_ex.reg_dest << "\n";
-        std::cout << "  ALU_op: " << id_ex.ALU_op << "\n";
-        std::cout << "  shift: " << id_ex.shift << "\n";
-        std::cout << "  mem_read: " << id_ex.mem_read << "\n";
-        std::cout << "  mem_write: " << id_ex.mem_write << "\n";
-        std::cout << "  reg_write: " << id_ex.reg_write << "\n";
-        std::cout << "  mem_to_reg: " << id_ex.mem_to_reg << "\n";
-        std::cout << "Branch/Jump Control:\n";
-        std::cout << "  branch: " << id_ex.branch << "\n";
-        std::cout << "  bne: " << id_ex.bne << "\n";
-        std::cout << "  jump: " << id_ex.jump << "\n";
-        std::cout << "  jump_reg: " << id_ex.jump_reg << "\n";
-        std::cout << "  link: " << id_ex.link << "\n";
-        std::cout << "  branch_target: 0x" << std::hex << id_ex.branch_target << std::dec << "\n";
-        std::cout << "  jump_target: 0x" << std::hex << id_ex.jump_target << std::dec << "\n";
-        
-        // Print EX/MEM Register
-        std::cout << "\n----- EX/MEM Register -----\n";
-        std::cout << "alu_result: 0x" << std::hex << ex_mem.alu_result << std::dec << "\n";
-        std::cout << "write_data: 0x" << std::hex << ex_mem.write_data << std::dec << "\n";
-        std::cout << "write_reg: " << ex_mem.write_reg << "\n";
-        std::cout << "pc: 0x" << std::hex << ex_mem.pc << std::dec << "\n";
-        std::cout << "Control Signals:\n";
-        std::cout << "  mem_read: " << ex_mem.mem_read << "\n";
-        std::cout << "  mem_write: " << ex_mem.mem_write << "\n";
-        std::cout << "  reg_write: " << ex_mem.reg_write << "\n";
-        std::cout << "  mem_to_reg: " << ex_mem.mem_to_reg << "\n";
-        std::cout << "Branch Results:\n";
-        std::cout << "  branch_taken: " << ex_mem.branch_taken << "\n";
-        std::cout << "  branch_target: 0x" << std::hex << ex_mem.branch_target << std::dec << "\n";
-        std::cout << "  jump: " << ex_mem.jump << "\n";
-        std::cout << "  jump_target: 0x" << std::hex << ex_mem.jump_target << std::dec << "\n";
-        
-        // Print MEM/WB Register
-        std::cout << "\n----- MEM/WB Register -----\n";
-        std::cout << "read_data: 0x" << std::hex << mem_wb.read_data << std::dec << "\n";
-        std::cout << "alu_result: 0x" << std::hex << mem_wb.alu_result << std::dec << "\n";
-        std::cout << "write_reg: " << mem_wb.write_reg << "\n";
-        std::cout << "pc: 0x" << std::hex << mem_wb.pc << std::dec << "\n";
-        std::cout << "Control Signals:\n";
-        std::cout << "  reg_write: " << mem_wb.reg_write << "\n";
-        std::cout << "  mem_to_reg: " << mem_wb.mem_to_reg << "\n";
-        
-
-    
     // WB Stage
     uint32_t write_data = 0;
     if (mem_wb.reg_write) {
         uint32_t read_data_1, read_data_2;
         write_data = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
-        if (id_ex.link) {
-            write_data = mem_wb.pc + 4;  // For jal instruction, save PC+4
+        if (mem_wb.link) {
+            write_data = mem_wb.pc + 8;  // For jal instruction, save PC+4
         }
         regfile.access(0, 0, read_data_1, read_data_2, mem_wb.write_reg, true, write_data);
     }
@@ -307,12 +249,31 @@ void Processor::pipelined_processor_advance() {
 
 
     // MEM Stage
-    uint32_t mem_result = 0;
-    if (ex_mem.mem_read || ex_mem.mem_write) {
-        if (!memory->access(ex_mem.alu_result, mem_result, ex_mem.write_data, ex_mem.mem_read, ex_mem.mem_write)){
-            return;
+    uint32_t read_data_mem = 0;
+    uint32_t write_data_mem = 0;
+    if (ex_mem.mem_read|ex_mem.mem_write) {
+        if(ex_mem.mem_read){
+            if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read|ex_mem.mem_write, ex_mem.mem_write)){
+                return;
+            }   
         }
+        if(ex_mem.mem_write){
+            if (ex_mem.halfword || ex_mem.byte){
+                if (!memory->access(ex_mem.alu_result, read_data_mem, ex_mem.write_data, ex_mem.mem_read|ex_mem.mem_write, ex_mem.mem_write)){
+                    return;
+                }
+                write_data_mem = ex_mem.halfword ? (read_data_mem & 0xffff0000) | (ex_mem.write_data & 0xffff) : 
+            ex_mem.byte ? (read_data_mem & 0xffffff00) | (ex_mem.write_data & 0xff): ex_mem.write_data;
+            }else{
+                write_data_mem = ex_mem.write_data;
+            }
+            if (!memory->access(ex_mem.alu_result, read_data_mem, write_data_mem, ex_mem.mem_read, ex_mem.mem_write)){
+                return;
+            }
+        }
+        read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
     }
+ 
 
     bool stall = false;
     // Check for hazards
@@ -324,11 +285,12 @@ void Processor::pipelined_processor_advance() {
         
     // Update MEM/WB
     mem_wb.alu_result = ex_mem.alu_result;
-    mem_wb.read_data = mem_result;
+    mem_wb.read_data = read_data_mem;
     mem_wb.write_reg = ex_mem.write_reg;
     mem_wb.reg_write = ex_mem.reg_write;
     mem_wb.mem_to_reg = ex_mem.mem_to_reg;
     mem_wb.pc = ex_mem.pc;  
+    mem_wb.link = ex_mem.link;
     
 
     
@@ -386,7 +348,7 @@ void Processor::pipelined_processor_advance() {
     // EX/MEM ← ID/EX
     ex_mem.alu_result = ex_result;
     ex_mem.write_data = forward_data2;
-    ex_mem.write_reg = id_ex.reg_dest ? id_ex.rd : id_ex.rt;
+    ex_mem.write_reg = id_ex.link? 31: id_ex.reg_dest ? id_ex.rd : id_ex.rt;
     ex_mem.mem_read = id_ex.mem_read;
     ex_mem.mem_write = id_ex.mem_write;
     ex_mem.reg_write = id_ex.reg_write;
@@ -396,6 +358,9 @@ void Processor::pipelined_processor_advance() {
     ex_mem.jump = id_ex.jump || id_ex.jump_reg;
     ex_mem.jump_target = id_ex.jump_target;
     ex_mem.pc = id_ex.pc; 
+    ex_mem.byte = id_ex.byte;
+    ex_mem.halfword = id_ex.halfword;
+    ex_mem.link = id_ex.link;
 
     if (!flush) {
         // ID/EX ← IF/ID
@@ -421,6 +386,26 @@ void Processor::pipelined_processor_advance() {
         
         // Access register file
         regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, false, 0);
+
+        // Forward from MEM/WB (Last stage)
+        if (mem_wb.reg_write && mem_wb.write_reg != 0) {
+            if (id_ex.rs == mem_wb.write_reg) {
+                id_ex.read_data_1 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+            }
+            if (id_ex.rt == mem_wb.write_reg) {
+                id_ex.read_data_2 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+            }
+        }
+
+        // Forward from EX/MEM (Previous stage)
+        if (ex_mem.reg_write && ex_mem.write_reg != 0) {
+            if (id_ex.rs == ex_mem.write_reg) {
+                id_ex.read_data_1 = ex_mem.alu_result;
+            }
+            if (id_ex.rt == ex_mem.write_reg) {
+                id_ex.read_data_2 = ex_mem.alu_result;
+            }
+        }
         
         // Control signals
         id_ex.ALU_src = control.ALU_src;
@@ -431,6 +416,8 @@ void Processor::pipelined_processor_advance() {
         id_ex.mem_write = control.mem_write;
         id_ex.reg_write = control.reg_write;
         id_ex.mem_to_reg = control.mem_to_reg;
+        id_ex.halfword = control.halfword;
+        id_ex.byte = control.byte;
         
         // Branch/Jump control
         id_ex.branch = control.branch;
@@ -438,6 +425,7 @@ void Processor::pipelined_processor_advance() {
         id_ex.jump = control.jump;
         id_ex.jump_reg = control.jump_reg;
         id_ex.link = control.link;
+ 
 
 
         //IF stage
