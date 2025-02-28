@@ -278,27 +278,12 @@ void Processor::pipelined_processor_advance() {
     bool stall = false;
     // Check for hazards
     if (ex_mem.mem_read && ex_mem.write_reg != 0) {
-        if (id_ex.rs == ex_mem.write_reg || id_ex.rt == ex_mem.write_reg) {
+        if ((id_ex.rs == ex_mem.write_reg) || (id_ex.rt == ex_mem.write_reg && (id_ex.branch || id_ex.mem_write || id_ex.opcode == 0) ) ) {
             stall = true;
         }
     }
         
-    // Update MEM/WB
-    mem_wb.alu_result = ex_mem.alu_result;
-    mem_wb.read_data = read_data_mem;
-    mem_wb.write_reg = ex_mem.write_reg;
-    mem_wb.reg_write = ex_mem.reg_write;
-    mem_wb.mem_to_reg = ex_mem.mem_to_reg;
-    mem_wb.pc = ex_mem.pc;  
-    mem_wb.link = ex_mem.link;
     
-
-    
-    if (stall){
-        memset(&ex_mem, 0, sizeof(EX_MEM_reg));
-        return;
-    }
-
     // EX Stage
     uint32_t forward_data1 = id_ex.read_data_1;
     uint32_t forward_data2 = id_ex.read_data_2;
@@ -307,6 +292,8 @@ void Processor::pipelined_processor_advance() {
     if (mem_wb.reg_write && mem_wb.write_reg != 0) {
         if (id_ex.rs == mem_wb.write_reg) {
             forward_data1 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
+
+
         }
         if (id_ex.rt == mem_wb.write_reg) {
             forward_data2 = mem_wb.mem_to_reg ? mem_wb.read_data : mem_wb.alu_result;
@@ -344,6 +331,24 @@ void Processor::pipelined_processor_advance() {
             new_pc = id_ex.branch_target;
         }
     }
+
+
+    // Update MEM/WB
+    mem_wb.alu_result = ex_mem.alu_result;
+    mem_wb.read_data = read_data_mem;
+    mem_wb.write_reg = ex_mem.write_reg;
+    mem_wb.reg_write = ex_mem.reg_write;
+    mem_wb.mem_to_reg = ex_mem.mem_to_reg;
+    mem_wb.pc = ex_mem.pc;  
+    mem_wb.link = ex_mem.link;
+
+
+    if (stall){
+        memset(&ex_mem, 0, sizeof(EX_MEM_reg));
+        return;
+    }
+
+        
 
     // EX/MEM ← ID/EX
     ex_mem.alu_result = ex_result;

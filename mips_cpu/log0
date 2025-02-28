@@ -135,17 +135,17 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 10 [R10]
+rt: 2 [R2]
 rd: 0 [R0]
 shamt: 0
 funct: 0 (0x0)
 immediate: 0 (0x0)
-address: 0xa0000
+address: 0x20000
 
 CYCLE 2
 R[0]: 0
 R[1]: 1
-R[2]: 0
+R[2]: 1
 R[3]: 0
 R[4]: 0
 R[5]: 0
@@ -153,7 +153,7 @@ R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -189,30 +189,30 @@ Control signals:
   jump: 0
   jump_reg: 0
   link: 0
-  shift: 1
+  shift: 0
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 0 [R0]
-rt: 0 [R0]
-rd: 0 [R0]
+rs: 2 [R2]
+rt: 2 [R2]
+rd: 3 [R3]
 shamt: 0
-funct: 0 (0x0)
-immediate: 0 (0x0)
-address: 0x0
+funct: 32 (0x20)
+immediate: 6176 (0x1820)
+address: 0x421820
 
 CYCLE 3
 R[0]: 0
 R[1]: 1
-R[2]: 0
-R[3]: 0
+R[2]: 1
+R[3]: 2
 R[4]: 0
 R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -253,25 +253,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 10 [R10]
+rt: 3 [R3]
 rd: 0 [R0]
 shamt: 0
-funct: 4 (0x4)
-immediate: 4 (0x4)
-address: 0xa0004
-   sw $10, 4($0)
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x30000
+
 CYCLE 4
 R[0]: 0
 R[1]: 1
-R[2]: 0
-R[3]: 0
+R[2]: 1
+R[3]: 2
 R[4]: 0
 R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -312,25 +312,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 2 [R2]
+rt: 4 [R4]
 rd: 0 [R0]
 shamt: 0
-funct: 4 (0x4)
-immediate: 4 (0x4)
-address: 0x20004
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x40000
 
 CYCLE 5
 R[0]: 0
 R[1]: 1
 R[2]: 1
-R[3]: 0
-R[4]: 0
+R[3]: 2
+R[4]: 2
 R[5]: 0
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -354,9 +354,9 @@ R[30]: 0
 R[31]: 0
 PC: 0x18
 Control signals:
-  ALU_op: 2
-  reg_dest: 1
-  ALU_src: 0
+  ALU_op: 3
+  reg_dest: 0
+  ALU_src: 1
   mem_to_reg: 0
   reg_write: 1
   mem_read: 0
@@ -370,26 +370,26 @@ Control signals:
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 1 [R1]
-rt: 1 [R1]
-rd: 1 [R1]
+rs: 4 [R4]
+rt: 5 [R5]
+rd: 0 [R0]
 shamt: 0
-funct: 32 (0x20)
-immediate: 2080 (0x820)
-address: 0x210820
+funct: 1 (0x1)
+immediate: 1 (0x1)
+address: 0x850001
 
 CYCLE 6
 R[0]: 0
-R[1]: 2
+R[1]: 1
 R[2]: 1
-R[3]: 0
-R[4]: 0
-R[5]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -430,25 +430,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 2 [R2]
+rt: 5 [R5]
 rd: 0 [R0]
 shamt: 0
-funct: 8 (0x8)
-immediate: 8 (0x8)
-address: 0x20008
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x50000
 
 CYCLE 7
 R[0]: 0
-R[1]: 2
+R[1]: 1
 R[2]: 1
-R[3]: 0
-R[4]: 0
-R[5]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
 R[6]: 0
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -489,25 +489,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 3 [R3]
+rt: 6 [R6]
 rd: 0 [R0]
 shamt: 0
-funct: 8 (0x8)
-immediate: 8 (0x8)
-address: 0x30008
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x60000
 
 CYCLE 8
 R[0]: 0
-R[1]: 2
+R[1]: 1
 R[2]: 1
-R[3]: 1
-R[4]: 0
-R[5]: 0
-R[6]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 3
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -531,9 +531,9 @@ R[30]: 0
 R[31]: 0
 PC: 0x24
 Control signals:
-  ALU_op: 2
-  reg_dest: 1
-  ALU_src: 0
+  ALU_op: 3
+  reg_dest: 0
+  ALU_src: 1
   mem_to_reg: 0
   reg_write: 1
   mem_read: 0
@@ -547,26 +547,26 @@ Control signals:
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 1 [R1]
-rt: 1 [R1]
-rd: 1 [R1]
+rs: 5 [R5]
+rt: 6 [R6]
+rd: 0 [R0]
 shamt: 0
-funct: 32 (0x20)
-immediate: 2080 (0x820)
-address: 0x210820
+funct: 1 (0x1)
+immediate: 1 (0x1)
+address: 0xa60001
 
 CYCLE 9
 R[0]: 0
-R[1]: 4
+R[1]: 1
 R[2]: 1
-R[3]: 1
-R[4]: 0
-R[5]: 0
-R[6]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -607,25 +607,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 1 [R1]
+rt: 6 [R6]
 rd: 0 [R0]
 shamt: 0
 funct: 0 (0x0)
 immediate: 0 (0x0)
-address: 0x10000
+address: 0x60000
 
 CYCLE 10
 R[0]: 0
-R[1]: 4
+R[1]: 1
 R[2]: 1
-R[3]: 1
-R[4]: 0
-R[5]: 0
-R[6]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
 R[7]: 0
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -666,25 +666,25 @@ Control signals:
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 4 [R4]
+rt: 7 [R7]
 rd: 0 [R0]
 shamt: 0
 funct: 0 (0x0)
 immediate: 0 (0x0)
-address: 0x40000
+address: 0x70000
 
 CYCLE 11
 R[0]: 0
-R[1]: 4
+R[1]: 1
 R[2]: 1
-R[3]: 1
-R[4]: 4
-R[5]: 0
-R[6]: 0
-R[7]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -708,13 +708,13 @@ R[30]: 0
 R[31]: 0
 PC: 0x30
 Control signals:
-  ALU_op: 2
-  reg_dest: 1
-  ALU_src: 0
+  ALU_op: 0
+  reg_dest: 0
+  ALU_src: 1
   mem_to_reg: 0
-  reg_write: 1
+  reg_write: 0
   mem_read: 0
-  mem_write: 0
+  mem_write: 1
   branch: 0
   bne: 0
   jump: 0
@@ -724,26 +724,26 @@ Control signals:
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 1 [R1]
-rt: 1 [R1]
-rd: 1 [R1]
+rs: 7 [R7]
+rt: 6 [R6]
+rd: 0 [R0]
 shamt: 0
-funct: 32 (0x20)
-immediate: 2080 (0x820)
-address: 0x210820
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0xe60000
 
 CYCLE 12
 R[0]: 0
-R[1]: 8
+R[1]: 1
 R[2]: 1
-R[3]: 1
-R[4]: 4
-R[5]: 0
-R[6]: 0
-R[7]: 0
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
 R[8]: 0
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -767,12 +767,12 @@ R[30]: 0
 R[31]: 0
 PC: 0x34
 Control signals:
-  ALU_op: 2
-  reg_dest: 1
-  ALU_src: 0
-  mem_to_reg: 0
+  ALU_op: 0
+  reg_dest: 0
+  ALU_src: 1
+  mem_to_reg: 1
   reg_write: 1
-  mem_read: 0
+  mem_read: 1
   mem_write: 0
   branch: 0
   bne: 0
@@ -783,26 +783,26 @@ Control signals:
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 2 [R2]
-rt: 2 [R2]
-rd: 2 [R2]
+rs: 7 [R7]
+rt: 8 [R8]
+rd: 0 [R0]
 shamt: 0
-funct: 32 (0x20)
-immediate: 4128 (0x1020)
-address: 0x421020
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0xe80000
 
 CYCLE 13
 R[0]: 0
-R[1]: 8
-R[2]: 2
-R[3]: 1
-R[4]: 4
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -826,14 +826,14 @@ R[30]: 0
 R[31]: 0
 PC: 0x38
 Control signals:
-  ALU_op: 0
+  ALU_op: 1
   reg_dest: 0
-  ALU_src: 1
+  ALU_src: 0
   mem_to_reg: 0
   reg_write: 0
   mem_read: 0
-  mem_write: 1
-  branch: 0
+  mem_write: 0
+  branch: 1
   bne: 0
   jump: 0
   jump_reg: 0
@@ -842,26 +842,26 @@ Control signals:
   byte: 0
   halfword: 0
   zero_extend: 0
-rs: 0 [R0]
-rt: 1 [R1]
+rs: 8 [R8]
+rt: 8 [R8]
 rd: 0 [R0]
 shamt: 0
-funct: 4 (0x4)
-immediate: 4 (0x4)
-address: 0x10004
+funct: 2 (0x2)
+immediate: 2 (0x2)
+address: 0x1080002
 
 CYCLE 14
 R[0]: 0
-R[1]: 8
-R[2]: 2
-R[3]: 1
-R[4]: 4
-R[5]: 0
-R[6]: 0
-R[7]: 0
-R[8]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -883,44 +883,44 @@ R[28]: 0
 R[29]: 0
 R[30]: 0
 R[31]: 0
-PC: 0x3c
+PC: 0x44
 Control signals:
-  ALU_op: 0
-  reg_dest: 0
-  ALU_src: 1
-  mem_to_reg: 1
+  ALU_op: 2
+  reg_dest: 1
+  ALU_src: 0
+  mem_to_reg: 0
   reg_write: 1
-  mem_read: 1
+  mem_read: 0
   mem_write: 0
   branch: 0
   bne: 0
   jump: 0
   jump_reg: 0
   link: 0
-  shift: 0
+  shift: 1
   byte: 0
   halfword: 0
   zero_extend: 0
 rs: 0 [R0]
-rt: 5 [R5]
+rt: 0 [R0]
 rd: 0 [R0]
 shamt: 0
-funct: 4 (0x4)
-immediate: 4 (0x4)
-address: 0x50004
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x0
 
 CYCLE 15
 R[0]: 0
-R[1]: 8
-R[2]: 2
-R[3]: 1
-R[4]: 4
-R[5]: 8
-R[6]: 0
-R[7]: 0
-R[8]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
 R[9]: 0
-R[10]: 1
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -942,7 +942,7 @@ R[28]: 0
 R[29]: 0
 R[30]: 0
 R[31]: 0
-PC: 0x40
+PC: 0x48
 Control signals:
   ALU_op: 2
   reg_dest: 1
@@ -970,16 +970,134 @@ address: 0x0
 
 CYCLE 16
 R[0]: 0
-R[1]: 8
-R[2]: 2
-R[3]: 1
-R[4]: 4
-R[5]: 8
-R[6]: 0
-R[7]: 0
-R[8]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
 R[9]: 0
-R[10]: 1
+R[10]: 0
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+PC: 0x4c
+Control signals:
+  ALU_op: 2
+  reg_dest: 1
+  ALU_src: 0
+  mem_to_reg: 0
+  reg_write: 1
+  mem_read: 0
+  mem_write: 0
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  shift: 1
+  byte: 0
+  halfword: 0
+  zero_extend: 0
+rs: 0 [R0]
+rt: 0 [R0]
+rd: 0 [R0]
+shamt: 0
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x0
+
+CYCLE 17
+R[0]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
+R[9]: 0
+R[10]: 0
+R[11]: 0
+R[12]: 0
+R[13]: 0
+R[14]: 0
+R[15]: 0
+R[16]: 0
+R[17]: 0
+R[18]: 0
+R[19]: 0
+R[20]: 0
+R[21]: 0
+R[22]: 0
+R[23]: 0
+R[24]: 0
+R[25]: 0
+R[26]: 0
+R[27]: 0
+R[28]: 0
+R[29]: 0
+R[30]: 0
+R[31]: 0
+PC: 0x50
+Control signals:
+  ALU_op: 2
+  reg_dest: 1
+  ALU_src: 0
+  mem_to_reg: 0
+  reg_write: 1
+  mem_read: 0
+  mem_write: 0
+  branch: 0
+  bne: 0
+  jump: 0
+  jump_reg: 0
+  link: 0
+  shift: 1
+  byte: 0
+  halfword: 0
+  zero_extend: 0
+rs: 0 [R0]
+rt: 0 [R0]
+rd: 0 [R0]
+shamt: 0
+funct: 0 (0x0)
+immediate: 0 (0x0)
+address: 0x0
+
+CYCLE 18
+R[0]: 0
+R[1]: 1
+R[2]: 1
+R[3]: 2
+R[4]: 2
+R[5]: 3
+R[6]: 4
+R[7]: 4
+R[8]: 4
+R[9]: 0
+R[10]: 0
 R[11]: 0
 R[12]: 0
 R[13]: 0
@@ -1002,4 +1120,4 @@ R[29]: 0
 R[30]: 0
 R[31]: 0
 
-Completed execution in 1062.5 nanoseconds.
+Completed execution in 1187.5 nanoseconds.
