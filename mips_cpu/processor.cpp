@@ -359,12 +359,12 @@ void Processor::pipelined_processor_advance() {
 
     if (!flush) {
         // ID Stage
-        int rs = (if_id.instruction >> 21) & 0x1f;
-        int rt = (if_id.instruction >> 16) & 0x1f;
-        if (ex_mem.mem_read && ex_mem.write_reg != 0 && (ex_mem.write_reg == rs || ex_mem.write_reg == rt)){
-            memset(&id_ex, 0, sizeof(ID_EX_reg));
-            return;
-        }
+        // int rs = (if_id.instruction >> 21) & 0x1f;
+        // int rt = (if_id.instruction >> 16) & 0x1f;
+        // if (ex_mem.mem_read && ex_mem.write_reg != 0 && (ex_mem.write_reg == rs || ex_mem.write_reg == rt)){
+        //     memset(&id_ex, 0, sizeof(ID_EX_reg));
+        //     return;
+        // }
 
         // ID/EX ← IF/ID
         control_t control;
@@ -428,8 +428,14 @@ void Processor::pipelined_processor_advance() {
         id_ex.jump = control.jump;
         id_ex.jump_reg = control.jump_reg;
         id_ex.link = control.link;
- 
 
+        // Check for hazards
+        if (ex_mem.mem_read && ex_mem.write_reg != 0) {
+            if ((id_ex.rs == ex_mem.write_reg) || (id_ex.rt == ex_mem.write_reg && (id_ex.branch || id_ex.mem_write || id_ex.opcode == 0) ) ) {
+                memset(&id_ex, 0, sizeof(ID_EX_reg));
+                return;
+            }
+        }
 
         //IF stage
         uint32_t next_instruction;
