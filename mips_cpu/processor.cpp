@@ -57,23 +57,23 @@ void Processor::single_cycle_processor_advance() {
     DEBUG(control.print());
 
 
-    std::cout << "Control signals:" << std::endl;
-    std::cout << "  ALU_op: " << control.ALU_op << std::endl;
-    std::cout << "  reg_dest: " << control.reg_dest << std::endl;
-    std::cout << "  ALU_src: " << control.ALU_src << std::endl;
-    std::cout << "  mem_to_reg: " << control.mem_to_reg << std::endl;
-    std::cout << "  reg_write: " << control.reg_write << std::endl;
-    std::cout << "  mem_read: " << control.mem_read << std::endl;
-    std::cout << "  mem_write: " << control.mem_write << std::endl;
-    std::cout << "  branch: " << control.branch << std::endl;
-    std::cout << "  bne: " << control.bne << std::endl;
-    std::cout << "  jump: " << control.jump << std::endl;
-    std::cout << "  jump_reg: " << control.jump_reg << std::endl;
-    std::cout << "  link: " << control.link << std::endl;
-    std::cout << "  shift: " << control.shift << std::endl;
-    std::cout << "  byte: " << control.byte << std::endl;
-    std::cout << "  halfword: " << control.halfword << std::endl;
-    std::cout << "  zero_extend: " << control.zero_extend << std::endl;
+    // std::cout << "Control signals:" << std::endl;
+    // std::cout << "  ALU_op: " << control.ALU_op << std::endl;
+    // std::cout << "  reg_dest: " << control.reg_dest << std::endl;
+    // std::cout << "  ALU_src: " << control.ALU_src << std::endl;
+    // std::cout << "  mem_to_reg: " << control.mem_to_reg << std::endl;
+    // std::cout << "  reg_write: " << control.reg_write << std::endl;
+    // std::cout << "  mem_read: " << control.mem_read << std::endl;
+    // std::cout << "  mem_write: " << control.mem_write << std::endl;
+    // std::cout << "  branch: " << control.branch << std::endl;
+    // std::cout << "  bne: " << control.bne << std::endl;
+    // std::cout << "  jump: " << control.jump << std::endl;
+    // std::cout << "  jump_reg: " << control.jump_reg << std::endl;
+    // std::cout << "  link: " << control.link << std::endl;
+    // std::cout << "  shift: " << control.shift << std::endl;
+    // std::cout << "  byte: " << control.byte << std::endl;
+    // std::cout << "  halfword: " << control.halfword << std::endl;
+    // std::cout << "  zero_extend: " << control.zero_extend << std::endl;
 
     // extract rs, rt, rd, imm, funct 
     int opcode = (instruction >> 26) & 0x3f;
@@ -87,13 +87,13 @@ void Processor::single_cycle_processor_advance() {
     // Variables to read data into
     uint32_t read_data_1 = 0;
     uint32_t read_data_2 = 0;
-std::cout << "rs: " << rs << " [R" << rs << "]" << std::endl;
-std::cout << "rt: " << rt << " [R" << rt << "]" << std::endl;
-std::cout << "rd: " << rd << " [R" << rd << "]" << std::endl;
-std::cout << "shamt: " << shamt << std::endl;
-std::cout << "funct: " << funct << " (0x" << std::hex << funct << std::dec << ")" << std::endl;
-std::cout << "immediate: " << std::dec << (int16_t)imm << " (0x" << std::hex << imm << std::dec << ")" << std::endl;
-std::cout << "address: 0x" << std::hex << addr << std::dec << std::endl;
+// std::cout << "rs: " << rs << " [R" << rs << "]" << std::endl;
+// std::cout << "rt: " << rt << " [R" << rt << "]" << std::endl;
+// std::cout << "rd: " << rd << " [R" << rd << "]" << std::endl;
+// std::cout << "shamt: " << shamt << std::endl;
+// std::cout << "funct: " << funct << " (0x" << std::hex << funct << std::dec << ")" << std::endl;
+// std::cout << "immediate: " << std::dec << (int16_t)imm << " (0x" << std::hex << imm << std::dec << ")" << std::endl;
+// std::cout << "address: 0x" << std::hex << addr << std::dec << std::endl;
 
     // Read from reg file
     regfile.access(rs, rt, read_data_1, read_data_2, 0, 0, 0);
@@ -244,6 +244,16 @@ void Processor::pipelined_processor_advance() {
 
 
     // MEM Stage
+    // Forward to EX From MEM/WB
+    if (mem_wb.reg_write && mem_wb.write_reg != 0) {
+        if (id_ex.rs == mem_wb.write_reg) {
+            id_ex.read_data_1 = mem_wb.write_data;
+        }
+        if (id_ex.rt == mem_wb.write_reg) {
+            id_ex.read_data_2 = mem_wb.write_data;
+        }
+    }
+
     uint32_t read_data_mem = 0;
     uint32_t write_data_mem = 0;
     if (ex_mem.mem_read|ex_mem.mem_write) {
@@ -269,6 +279,7 @@ void Processor::pipelined_processor_advance() {
         read_data_mem &= ex_mem.halfword ? 0xffff : ex_mem.byte ? 0xff : 0xffffffff;
     }
 
+    //precalculate the write data
     uint32_t write_data = 0;
     write_data = ex_mem.mem_to_reg ? read_data_mem : ex_mem.alu_result;
     if (ex_mem.link) {
@@ -282,12 +293,19 @@ void Processor::pipelined_processor_advance() {
     mem_wb.pc = ex_mem.pc;  
 
     // EX Stage
-    uint32_t forward_data1 = id_ex.read_data_1;
-    uint32_t forward_data2 = id_ex.read_data_2;
+    // Forward to EX from EX/MEM
+    if (ex_mem.reg_write && ex_mem.write_reg != 0) {
+        if (id_ex.rs == ex_mem.write_reg) {
+            id_ex.read_data_1 = ex_mem.alu_result;
+        }
+        if (id_ex.rt == ex_mem.write_reg) {
+            id_ex.read_data_2 = ex_mem.alu_result;
+        }
+    }
 
     uint32_t alu_zero;
-    uint32_t operand_1 = id_ex.shift ? id_ex.shamt : forward_data1;
-    uint32_t operand_2 = id_ex.ALU_src ? id_ex.imm : forward_data2;
+    uint32_t operand_1 = id_ex.shift ? id_ex.shamt : id_ex.read_data_1;
+    uint32_t operand_2 = id_ex.ALU_src ? id_ex.imm : id_ex.read_data_2;
     
     alu.generate_control_inputs(id_ex.ALU_op, id_ex.funct, id_ex.opcode);
     uint32_t ex_result = alu.execute(operand_1, operand_2, alu_zero);
@@ -299,7 +317,7 @@ void Processor::pipelined_processor_advance() {
     if (actual_branch_taken || id_ex.jump || id_ex.jump_reg) {
         flush = true;
         if (id_ex.jump_reg) {
-            new_pc = forward_data1;
+            new_pc = id_ex.read_data_1;
         } else if (id_ex.jump) {
             new_pc = id_ex.jump_target;
         } else {
@@ -309,7 +327,7 @@ void Processor::pipelined_processor_advance() {
 
     // EX/MEM ← ID/EX
     ex_mem.alu_result = ex_result;
-    ex_mem.write_data = forward_data2;
+    ex_mem.write_data = id_ex.read_data_2;
     ex_mem.write_reg = id_ex.link? 31: id_ex.reg_dest ? id_ex.rd : id_ex.rt;
     ex_mem.mem_read = id_ex.mem_read;
     ex_mem.mem_write = id_ex.mem_write;
@@ -350,26 +368,6 @@ void Processor::pipelined_processor_advance() {
         
         // Access register file
         regfile.access(id_ex.rs, id_ex.rt, id_ex.read_data_1, id_ex.read_data_2, 0, false, 0);
-
-        // Forward from MEM/WB (Last stage)
-        if (mem_wb.reg_write && mem_wb.write_reg != 0) {
-            if (id_ex.rs == mem_wb.write_reg) {
-                id_ex.read_data_1 = mem_wb.write_data;
-            }
-            if (id_ex.rt == mem_wb.write_reg) {
-                id_ex.read_data_2 = mem_wb.write_data;
-            }
-        }
-
-        // Forward from EX/MEM (Previous stage)
-        if (ex_mem.reg_write && ex_mem.write_reg != 0) {
-            if (id_ex.rs == ex_mem.write_reg) {
-                id_ex.read_data_1 = ex_mem.alu_result;
-            }
-            if (id_ex.rt == ex_mem.write_reg) {
-                id_ex.read_data_2 = ex_mem.alu_result;
-            }
-        }
         
         // Control signals
         id_ex.ALU_src = control.ALU_src;
