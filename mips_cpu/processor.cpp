@@ -282,41 +282,8 @@ void Processor::pipelined_processor_advance() {
     mem_wb.pc = ex_mem.pc;  
 
     // EX Stage
-    // // Check for hazards
-    // bool stall = false;
-    // if (ex_mem.mem_read && ex_mem.write_reg != 0) {
-    //     if ((id_ex.rs == ex_mem.write_reg) || (id_ex.rt == ex_mem.write_reg && (id_ex.branch || id_ex.mem_write) ) ) {
-    //         stall = true;
-    //     }
-    // }
-
-    // if (stall){
-    //     memset(&ex_mem, 0, sizeof(EX_MEM_reg));
-    //     return;
-    // }
-
     uint32_t forward_data1 = id_ex.read_data_1;
     uint32_t forward_data2 = id_ex.read_data_2;
-
-    // Forward from MEM/WB (Last stage)
-    if (mem_wb.reg_write && mem_wb.write_reg != 0) {
-        if (id_ex.rs == mem_wb.write_reg) {
-            forward_data1 = mem_wb.write_data;
-        }
-        if (id_ex.rt == mem_wb.write_reg) {
-            forward_data2 = mem_wb.write_data;
-        }
-    }
-
-    // Forward from EX/MEM (Previous stage)
-    if (ex_mem.reg_write && ex_mem.write_reg != 0) {
-        if (id_ex.rs == ex_mem.write_reg) {
-            forward_data1 = ex_mem.alu_result;
-        }
-        if (id_ex.rt == ex_mem.write_reg) {
-            forward_data2 = ex_mem.alu_result;
-        }
-    }
 
     uint32_t alu_zero;
     uint32_t operand_1 = id_ex.shift ? id_ex.shamt : forward_data1;
@@ -359,12 +326,6 @@ void Processor::pipelined_processor_advance() {
 
     if (!flush) {
         // ID Stage
-        // int rs = (if_id.instruction >> 21) & 0x1f;
-        // int rt = (if_id.instruction >> 16) & 0x1f;
-        // if (ex_mem.mem_read && ex_mem.write_reg != 0 && (ex_mem.write_reg == rs || ex_mem.write_reg == rt)){
-        //     memset(&id_ex, 0, sizeof(ID_EX_reg));
-        //     return;
-        // }
 
         // ID/EX ← IF/ID
         control_t control;
