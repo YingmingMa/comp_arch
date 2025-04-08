@@ -2,6 +2,8 @@
 #include "regfile.h"
 #include "ALU.h"
 #include "control.h"
+#include "ooo_processor.h" 
+
 class Processor {
     private:
         int opt_level;
@@ -10,12 +12,13 @@ class Processor {
         Memory *memory;
         Registers regfile;
         // add other structures as needed
-
+        OooProcessor *oooProc = nullptr;
         // pipelined processor
 
         // add private functions
         void single_cycle_processor_advance();
         void pipelined_processor_advance();
+        void ooo_processor_advance();
  
     public:
         Processor(Memory *mem) { regfile.pc = 0; memory = mem;}

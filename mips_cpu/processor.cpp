@@ -30,6 +30,10 @@ void Processor::initialize(int level) {
                .zero_extend = 0};
    
     opt_level = level;
+    // If out-of-order, create the OoO processor instance.
+    if (opt_level == 2) {
+        oooProc = new OooProcessor(memory, regfile, alu);
+    }
 }
 
 void Processor::advance() {
@@ -37,6 +41,8 @@ void Processor::advance() {
         case 0: single_cycle_processor_advance();
                 break;
         case 1: pipelined_processor_advance();
+                break;
+        case 2: ooo_processor_advance();
                 break;
         default: break;
     }
@@ -410,4 +416,10 @@ void Processor::pipelined_processor_advance() {
     }
     current_pc = new_pc;
         
+}
+
+void Processor::ooo_processor_advance() {
+    if (oooProc) {
+        oooProc->advance();
+    }
 }
